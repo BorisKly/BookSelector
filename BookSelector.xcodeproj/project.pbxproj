@@ -13,6 +13,19 @@
 		EC4B4C1228D21D8300285221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C1028D21D8300285221 /* Main.storyboard */; };
 		EC4B4C1428D21D8A00285221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C1328D21D8A00285221 /* Assets.xcassets */; };
 		EC4B4C1728D21D8A00285221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C1528D21D8A00285221 /* LaunchScreen.storyboard */; };
+		EC4B4C2328D21E2800285221 /* OpenLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C2228D21E2800285221 /* OpenLibraryViewController.swift */; };
+		EC4B4C2528D21E4B00285221 /* OpenLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C2428D21E4B00285221 /* OpenLibraryView.swift */; };
+		EC4B4C2728D21E6600285221 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C2628D21E6600285221 /* BooksModel.swift */; };
+		EC4B4C2A28D21EB300285221 /* AppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C2928D21EB300285221 /* AppConfigurator.swift */; };
+		EC4B4C2C28D21ED800285221 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C2B28D21ED800285221 /* Coordinator.swift */; };
+		EC4B4C2E28D21F0200285221 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C2D28D21F0200285221 /* StoryboardLoadable.swift */; };
+		EC4B4C3028D21F2600285221 /* ScreensCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C2F28D21F2600285221 /* ScreensCoordinator.swift */; };
+		EC4B4C3328D2287D00285221 /* NetworkMenegers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C3228D2287D00285221 /* NetworkMenegers.swift */; };
+		EC4B4C3528D22C2E00285221 /* OpenLibraryResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C3428D22C2E00285221 /* OpenLibraryResponseData.swift */; };
+		EC4B4C3728D22DE200285221 /* OpenLibraryViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C3628D22DE200285221 /* OpenLibraryViewController+.swift */; };
+		EC4B4C3A28D2324200285221 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C3828D2324200285221 /* CollectionViewCell.swift */; };
+		EC4B4C3B28D2324200285221 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C3928D2324200285221 /* CollectionViewCell.xib */; };
+		EC4B4C3D28D23DB700285221 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C3C28D23DB700285221 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +37,19 @@
 		EC4B4C1328D21D8A00285221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC4B4C1628D21D8A00285221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC4B4C1828D21D8A00285221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC4B4C2228D21E2800285221 /* OpenLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryViewController.swift; sourceTree = "<group>"; };
+		EC4B4C2428D21E4B00285221 /* OpenLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryView.swift; sourceTree = "<group>"; };
+		EC4B4C2628D21E6600285221 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
+		EC4B4C2928D21EB300285221 /* AppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurator.swift; sourceTree = "<group>"; };
+		EC4B4C2B28D21ED800285221 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EC4B4C2D28D21F0200285221 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
+		EC4B4C2F28D21F2600285221 /* ScreensCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensCoordinator.swift; sourceTree = "<group>"; };
+		EC4B4C3228D2287D00285221 /* NetworkMenegers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMenegers.swift; sourceTree = "<group>"; };
+		EC4B4C3428D22C2E00285221 /* OpenLibraryResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryResponseData.swift; sourceTree = "<group>"; };
+		EC4B4C3628D22DE200285221 /* OpenLibraryViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OpenLibraryViewController+.swift"; sourceTree = "<group>"; };
+		EC4B4C3828D2324200285221 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		EC4B4C3928D2324200285221 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		EC4B4C3C28D23DB700285221 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +66,10 @@
 		EC4B4BFE28D21D8300285221 = {
 			isa = PBXGroup;
 			children = (
+				EC4B4C3C28D23DB700285221 /* Colors.swift */,
+				EC4B4C3128D2286200285221 /* Menegers */,
+				EC4B4C1E28D21DCA00285221 /* OpenLibrary */,
+				EC4B4C2828D21E9C00285221 /* Coordinator */,
 				EC4B4C0928D21D8300285221 /* BookSelector */,
 				EC4B4C0828D21D8300285221 /* Products */,
 			);
@@ -65,6 +95,63 @@
 				EC4B4C1828D21D8A00285221 /* Info.plist */,
 			);
 			path = BookSelector;
+			sourceTree = "<group>";
+		};
+		EC4B4C1E28D21DCA00285221 /* OpenLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C1F28D21DDB00285221 /* Controller */,
+				EC4B4C2128D21DEF00285221 /* View */,
+				EC4B4C2028D21DE500285221 /* Model */,
+			);
+			path = OpenLibrary;
+			sourceTree = "<group>";
+		};
+		EC4B4C1F28D21DDB00285221 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C2228D21E2800285221 /* OpenLibraryViewController.swift */,
+				EC4B4C3628D22DE200285221 /* OpenLibraryViewController+.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC4B4C2028D21DE500285221 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C2628D21E6600285221 /* BooksModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC4B4C2128D21DEF00285221 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C2428D21E4B00285221 /* OpenLibraryView.swift */,
+				EC4B4C3828D2324200285221 /* CollectionViewCell.swift */,
+				EC4B4C3928D2324200285221 /* CollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC4B4C2828D21E9C00285221 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C2928D21EB300285221 /* AppConfigurator.swift */,
+				EC4B4C2B28D21ED800285221 /* Coordinator.swift */,
+				EC4B4C2D28D21F0200285221 /* StoryboardLoadable.swift */,
+				EC4B4C2F28D21F2600285221 /* ScreensCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		EC4B4C3128D2286200285221 /* Menegers */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C3228D2287D00285221 /* NetworkMenegers.swift */,
+				EC4B4C3428D22C2E00285221 /* OpenLibraryResponseData.swift */,
+			);
+			path = Menegers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +213,7 @@
 			files = (
 				EC4B4C1728D21D8A00285221 /* LaunchScreen.storyboard in Resources */,
 				EC4B4C1428D21D8A00285221 /* Assets.xcassets in Resources */,
+				EC4B4C3B28D2324200285221 /* CollectionViewCell.xib in Resources */,
 				EC4B4C1228D21D8300285221 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +225,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC4B4C3528D22C2E00285221 /* OpenLibraryResponseData.swift in Sources */,
+				EC4B4C3D28D23DB700285221 /* Colors.swift in Sources */,
+				EC4B4C3728D22DE200285221 /* OpenLibraryViewController+.swift in Sources */,
+				EC4B4C3028D21F2600285221 /* ScreensCoordinator.swift in Sources */,
+				EC4B4C2C28D21ED800285221 /* Coordinator.swift in Sources */,
+				EC4B4C2A28D21EB300285221 /* AppConfigurator.swift in Sources */,
+				EC4B4C2328D21E2800285221 /* OpenLibraryViewController.swift in Sources */,
 				EC4B4C0F28D21D8300285221 /* ViewController.swift in Sources */,
+				EC4B4C2E28D21F0200285221 /* StoryboardLoadable.swift in Sources */,
+				EC4B4C2528D21E4B00285221 /* OpenLibraryView.swift in Sources */,
+				EC4B4C2728D21E6600285221 /* BooksModel.swift in Sources */,
+				EC4B4C3A28D2324200285221 /* CollectionViewCell.swift in Sources */,
+				EC4B4C3328D2287D00285221 /* NetworkMenegers.swift in Sources */,
 				EC4B4C0B28D21D8300285221 /* AppDelegate.swift in Sources */,
 				EC4B4C0D28D21D8300285221 /* SceneDelegate.swift in Sources */,
 			);
