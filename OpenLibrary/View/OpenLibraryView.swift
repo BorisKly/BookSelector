@@ -5,11 +5,17 @@
 //  Created by Boris Klykavka on 14.09.2022.
 //
 import UIKit
+import PinLayout
 
 class OpenLibraryView: UIView {
 
+    let a = 1
+
     public var myBookCellView: UICollectionView = {
-        let bookCell = UICollectionView()
+
+        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let bookCell:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+
         bookCell.translatesAutoresizingMaskIntoConstraints = false
         bookCell.backgroundColor = Colors.background1
         let flowLayout = UICollectionViewFlowLayout()
