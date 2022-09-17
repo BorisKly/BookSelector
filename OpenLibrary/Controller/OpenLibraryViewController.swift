@@ -38,14 +38,15 @@ class OpenLibraryViewController: UIViewController {
 
     override func loadView() {
         let codeView = OpenLibraryView(frame: CGRect.zero)
-        codeView.backgroundColor = UIColor.blue
+        codeView.backgroundColor = Colors.background1
+
         self.view = codeView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView?.myBookCellView.delegate = self
-        mainView?.myBookCellView.dataSource = self
+        mainView?.myBookItemView.delegate = self
+        mainView?.myBookItemView.dataSource = self
         mainView?.setupUI()
     }
 }

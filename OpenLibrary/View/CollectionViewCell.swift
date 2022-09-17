@@ -16,7 +16,7 @@ class CollectionViewCell: UICollectionViewCell {
     var books: BooksModel? {
         didSet {
             bookTitle.text = books?.name
-            if let image = books?.imageName  {
+            if let image = books?.imageName {
                 bookImage.image = UIImage(named: image)
             }
         }

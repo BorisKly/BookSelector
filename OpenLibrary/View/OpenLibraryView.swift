@@ -9,29 +9,22 @@ import PinLayout
 
 class OpenLibraryView: UIView {
 
-    let a = 1
-
-    public var myBookCellView: UICollectionView = {
-
+    public var myBookItemView: UICollectionView = {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let bookCell:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-
-        bookCell.translatesAutoresizingMaskIntoConstraints = false
-        bookCell.backgroundColor = Colors.background1
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 250, height: 250)
-        bookCell.collectionViewLayout = flowLayout
-       // bookCell.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return bookCell
+        let bookItems:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        bookItems.translatesAutoresizingMaskIntoConstraints = false
+        bookItems.backgroundColor = Colors.background2
+        bookItems.sizeToFit()
+        layout.itemSize = CGSize(width: 200, height: 300)
+        bookItems.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return bookItems
     }()
-
-
 
     private let bookFinderLbl: UILabel = {
         let lblField = UILabel()
         lblField.isUserInteractionEnabled = true
         lblField.translatesAutoresizingMaskIntoConstraints = false
-        lblField.backgroundColor = Colors.background1
+        lblField.backgroundColor = Colors.background2
         lblField.textAlignment = .center
         lblField.numberOfLines = 0
         lblField.sizeToFit()
@@ -46,7 +39,7 @@ class OpenLibraryView: UIView {
         let txtField = UITextField()
         txtField.isUserInteractionEnabled = true
         txtField.translatesAutoresizingMaskIntoConstraints = false
-        txtField.backgroundColor = Colors.background1
+        txtField.backgroundColor = Colors.background2
         txtField.textAlignment = .center
         txtField.sizeToFit()
       //  lblField.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
@@ -75,7 +68,7 @@ class OpenLibraryView: UIView {
         self.addSubview(bookFinderLbl)
         self.addSubview(bookFinderTxt)
         self.addSubview(confirmBtn)
-        self.addSubview(myBookCellView)
+        self.addSubview(myBookItemView)
         //self.isUserInteractionEnabled = true
 
     }
@@ -86,12 +79,12 @@ class OpenLibraryView: UIView {
     // MARK: - Public Methods
 
     public func setupUI() {
-       // createBookCell()
+        createBookItem()
         setConstraints()
     }
 
-    private func createBookCell() {
-        myBookCellView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookModelCell")
+    private func createBookItem() {
+        myBookItemView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookModelCell")
     }
 
     private func setConstraints() {
@@ -111,12 +104,10 @@ class OpenLibraryView: UIView {
         confirmBtn.topAnchor.constraint(equalTo: bookFinderTxt.bottomAnchor, constant: 20).isActive = true
         confirmBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
-        myBookCellView.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor, constant: -20).isActive = true
-        myBookCellView.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor, constant: 20).isActive = true
-        myBookCellView.topAnchor.constraint(equalTo: confirmBtn.bottomAnchor, constant: 20).isActive = true
-        myBookCellView.heightAnchor.constraint(equalToConstant: 250).isActive = true
-
+        myBookItemView.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor, constant: -20).isActive = true
+        myBookItemView.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor, constant: 20).isActive = true
+        myBookItemView.topAnchor.constraint(equalTo: confirmBtn.bottomAnchor, constant: 20).isActive = true
+        myBookItemView.heightAnchor.constraint(equalToConstant: 500).isActive = true
 
     }
-
 }
