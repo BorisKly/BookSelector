@@ -5,7 +5,6 @@
 //  Created by Boris Klykavka on 14.09.2022.
 //
 
-
 import UIKit
 
 enum AvailableScreens {
@@ -45,4 +44,3 @@ extension ScreensCoordinator {
         }
     }
 }
-

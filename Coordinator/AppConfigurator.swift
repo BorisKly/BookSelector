@@ -24,4 +24,3 @@ final class AppConfigurator {
         window.makeKeyAndVisible()
     }
 }
-

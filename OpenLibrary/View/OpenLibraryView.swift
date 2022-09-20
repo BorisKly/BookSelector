@@ -11,13 +11,15 @@ class OpenLibraryView: UIView {
 
     public var myBookItemView: UICollectionView = {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        let bookItems:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        bookItems.translatesAutoresizingMaskIntoConstraints = false
-        bookItems.backgroundColor = Colors.background2
-        bookItems.sizeToFit()
-        layout.itemSize = CGSize(width: 200, height: 300)
-        bookItems.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        return bookItems
+        let bookCollectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        bookCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        bookCollectionView.backgroundColor = Colors.background2
+        bookCollectionView.sizeToFit()
+        layout.itemSize = CGSize(width: 70, height: 70)
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .horizontal
+        bookCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        return bookCollectionView
     }()
 
     private let bookFinderLbl: UILabel = {

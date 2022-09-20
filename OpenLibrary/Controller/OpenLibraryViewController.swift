@@ -13,13 +13,28 @@ import UIKit
 
 class OpenLibraryViewController: UIViewController {
 
-   // public var model: BooksModel = BooksModel()
+    //var json: OpenLibraryData?
+
+    public var model: OpenLibraryModel = OpenLibraryModel()
 
     var itemMenuArray: [BooksModel] = {
         var blankMenu = BooksModel()
         blankMenu.imageName = "Taras"
-        blankMenu.name = "Tarsa Shevchenko"
-        return [blankMenu]
+        blankMenu.name = "Taras Shevchenko"
+
+        var blankMenu2 = BooksModel()
+        blankMenu2.imageName = "Ostap"
+        blankMenu2.name = "Ostap Vishnya"
+
+        var blankMenu3 = BooksModel()
+        blankMenu2.imageName = "Ostap1"
+        blankMenu2.name = "Ostap1 Vishnya"
+
+        var blankMenu4 = BooksModel()
+        blankMenu2.imageName = "Ostap2"
+        blankMenu2.name = "Ostap2 Vishnya"
+
+        return [blankMenu, blankMenu2, blankMenu3, blankMenu4]
     }()
 
     // MARK: - Privat Properties
@@ -48,7 +63,8 @@ class OpenLibraryViewController: UIViewController {
         mainView?.myBookItemView.delegate = self
         mainView?.myBookItemView.dataSource = self
         mainView?.setupUI()
-    }
+        model.setSearchModelForBooks(bookTitle: "boris") { print("!!!") }
+
 }
 // MARK: - Extensions
 //
@@ -60,3 +76,4 @@ class OpenLibraryViewController: UIViewController {
 //
 //}
 
+}
