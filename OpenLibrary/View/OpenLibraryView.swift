@@ -9,13 +9,15 @@ import PinLayout
 
 class OpenLibraryView: UIView {
 
+    weak public var delegate: OpenLibraryViewControllerDelegate?
+
     public var myBookItemView: UICollectionView = {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let bookCollectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         bookCollectionView.translatesAutoresizingMaskIntoConstraints = false
         bookCollectionView.backgroundColor = Colors.background2
         bookCollectionView.sizeToFit()
-        layout.itemSize = CGSize(width: 70, height: 70)
+        layout.itemSize = CGSize(width: 70, height: 120)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
         bookCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -26,28 +28,16 @@ class OpenLibraryView: UIView {
         let lblField = UILabel()
         lblField.isUserInteractionEnabled = true
         lblField.translatesAutoresizingMaskIntoConstraints = false
-        lblField.backgroundColor = Colors.background2
-        lblField.textAlignment = .center
-        lblField.numberOfLines = 0
-        lblField.sizeToFit()
-      //  lblField.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
-        lblField.text = """
-                        Some Label
-                        """
         return lblField
     }()
 
-    private let bookFinderTxt: UITextField = {
-        let txtField = UITextField()
+    public let bookFinderSearchBar: UISearchBar = {
+        let txtField = UISearchBar()
         txtField.isUserInteractionEnabled = true
         txtField.translatesAutoresizingMaskIntoConstraints = false
         txtField.backgroundColor = Colors.background2
-        txtField.textAlignment = .center
         txtField.sizeToFit()
-      //  lblField.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
-        txtField.text = """
-                        enter text
-                        """
+        txtField.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
         return txtField
     }()
 
@@ -56,10 +46,10 @@ class OpenLibraryView: UIView {
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = Colors.background2
         btn.setTitleColor(Colors.background4, for: .normal)
-        btn.setTitle("Press to find book", for: .normal)
+        btn.setTitle("Press to show result", for: .normal)
         btn.setTitle("Pressed...", for: .highlighted)
-       // btn.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
-       // btn.addTarget(self, action: #selector(showDatePicker), for: .touchDown)
+        btn.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
+        btn.addTarget(self, action: #selector(findBooks), for: .touchDown)
         btn.clipsToBounds = true
         btn.isHighlighted = false
         return btn
@@ -68,7 +58,7 @@ class OpenLibraryView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(bookFinderLbl)
-        self.addSubview(bookFinderTxt)
+        self.addSubview(bookFinderSearchBar)
         self.addSubview(confirmBtn)
         self.addSubview(myBookItemView)
         //self.isUserInteractionEnabled = true
@@ -83,10 +73,32 @@ class OpenLibraryView: UIView {
     public func setupUI() {
         createBookItem()
         setConstraints()
+        setTopLabelForSearchScreen(label: bookFinderLbl)
     }
 
     private func createBookItem() {
         myBookItemView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BookModelCell")
+    }
+
+    @objc func findBooks() {
+        delegate?.ttttt()
+    }
+
+    private func setTopLabelForSearchScreen(label: UILabel) {
+        label.backgroundColor = Colors.background3
+        label.textAlignment = .center
+        label.textColor = Colors.textColor2
+        label.shadowColor = Colors.textShadowColor1
+        label.shadowOffset = CGSize(width: 2, height: 2)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.adjustsFontSizeToFitWidth = true
+        label.font = Fonts.font2
+        label.sizeToFit()
+        label.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
+        label.text = """
+                     Search of Book Title
+                     """
     }
 
     private func setConstraints() {
@@ -96,14 +108,14 @@ class OpenLibraryView: UIView {
         bookFinderLbl.topAnchor.constraint(equalTo: self.topAnchor, constant: 60).isActive = true
         bookFinderLbl.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
-        bookFinderTxt.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor).isActive = true
-        bookFinderTxt.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor).isActive = true
-        bookFinderTxt.topAnchor.constraint(equalTo: bookFinderLbl.bottomAnchor, constant: 20).isActive = true
-        bookFinderTxt.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        bookFinderSearchBar.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor).isActive = true
+        bookFinderSearchBar.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor).isActive = true
+        bookFinderSearchBar.topAnchor.constraint(equalTo: bookFinderLbl.bottomAnchor, constant: 20).isActive = true
+        bookFinderSearchBar.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
         confirmBtn.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor).isActive = true
         confirmBtn.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor).isActive = true
-        confirmBtn.topAnchor.constraint(equalTo: bookFinderTxt.bottomAnchor, constant: 20).isActive = true
+        confirmBtn.topAnchor.constraint(equalTo: bookFinderSearchBar.bottomAnchor, constant: 20).isActive = true
         confirmBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
         myBookItemView.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor, constant: -20).isActive = true

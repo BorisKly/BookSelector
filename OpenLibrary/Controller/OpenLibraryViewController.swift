@@ -7,17 +7,15 @@
 
 import UIKit
 
-//protocol  OpenLibraryViewControllerDelegate: AnyObject {
-//    func dCH()
-//}
+protocol  OpenLibraryViewControllerDelegate: AnyObject {
+    func ttttt()
+}
 
 class OpenLibraryViewController: UIViewController {
 
-    //var json: OpenLibraryData?
-
     public var model: OpenLibraryModel = OpenLibraryModel()
 
-    var itemMenuArray: [BooksModel] = {
+    var listOfSearchBooks: [BooksModel] = {
         var blankMenu = BooksModel()
         blankMenu.imageName = "Taras"
         blankMenu.name = "Taras Shevchenko"
@@ -27,15 +25,17 @@ class OpenLibraryViewController: UIViewController {
         blankMenu2.name = "Ostap Vishnya"
 
         var blankMenu3 = BooksModel()
-        blankMenu2.imageName = "Ostap1"
-        blankMenu2.name = "Ostap1 Vishnya"
+        blankMenu2.imageName = "Pavlo"
+        blankMenu2.name = "Pavlo one"
 
         var blankMenu4 = BooksModel()
-        blankMenu2.imageName = "Ostap2"
-        blankMenu2.name = "Ostap2 Vishnya"
+        blankMenu2.imageName = "John"
+        blankMenu2.name = "Jonn B"
 
         return [blankMenu, blankMenu2, blankMenu3, blankMenu4]
     }()
+
+    var searchTitleText = String()
 
     // MARK: - Privat Properties
 
@@ -60,20 +60,29 @@ class OpenLibraryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainView?.delegate = self
         mainView?.myBookItemView.delegate = self
         mainView?.myBookItemView.dataSource = self
+        mainView?.bookFinderSearchBar.delegate = self
         mainView?.setupUI()
-        model.setSearchModelForBooks(bookTitle: "boris") { print("!!!") }
+}
 
 }
-// MARK: - Extensions
-//
-//extension OpenLibraryViewController: OpenLibraryViewControllerDelegate {
-//    func dCH() {
-//        print("!")
-//    }
-//
-//
-//}
 
+extension OpenLibraryViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard searchText != "" || searchText != " " else {
+            print("empty search")
+            return
+        }
+        searchTitleText = searchText.lowercased()
+        print(searchTitleText)
+    }
+}
+
+extension OpenLibraryViewController: OpenLibraryViewControllerDelegate {
+    func ttttt() {
+        model.setSearchModelForBooks(bookTitle: searchTitleText) { print("\(self.searchTitleText)") }
+    }
 }

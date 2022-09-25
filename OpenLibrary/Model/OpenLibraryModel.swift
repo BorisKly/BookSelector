@@ -12,9 +12,8 @@ class OpenLibraryModel {
     var jsonB : OpenLibraryData?
 
     public func setSearchModelForBooks(bookTitle : String, onSuccess: @ escaping () -> Void) {
-        NetworkManager.shared.opelLibrarySimpleArray(dataR: bookTitle, onSuccess:  { [weak self] json in self?.jsonB = json
+        NetworkManager.shared.openLibraryResultOfTitleSearch(dataR: bookTitle, onSuccess:  { [weak self] json in self?.jsonB = json
             DispatchQueue.main.async{ onSuccess() }
         }, onError: { print($0)} )
 }
 }
-

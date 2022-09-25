@@ -28,9 +28,9 @@
 		EC4B4C3B28D2324200285221 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C3928D2324200285221 /* CollectionViewCell.xib */; };
 		EC4B4C3D28D23DB700285221 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C3C28D23DB700285221 /* Colors.swift */; };
 		EC4B4C4228D6496B00285221 /* OpenLibraryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4128D6496A00285221 /* OpenLibraryData.swift */; };
-		EC4B4C4428D78D5500285221 /* QuizResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4328D78D5400285221 /* QuizResponseData.swift */; };
-		EC4B4C4628D78D6700285221 /* QuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4528D78D6700285221 /* QuizData.swift */; };
 		EC4B4C4828D9F25100285221 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4728D9F25100285221 /* BooksModel.swift */; };
+		EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4928E034D900285221 /* SomeConstraints.swift */; };
+		EC4B4C4C28E0371700285221 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4B28E0371700285221 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,9 +58,9 @@
 		EC4B4C3928D2324200285221 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		EC4B4C3C28D23DB700285221 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		EC4B4C4128D6496A00285221 /* OpenLibraryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryData.swift; sourceTree = "<group>"; };
-		EC4B4C4328D78D5400285221 /* QuizResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResponseData.swift; sourceTree = "<group>"; };
-		EC4B4C4528D78D6700285221 /* QuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizData.swift; sourceTree = "<group>"; };
 		EC4B4C4728D9F25100285221 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
+		EC4B4C4928E034D900285221 /* SomeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeConstraints.swift; sourceTree = "<group>"; };
+		EC4B4C4B28E0371700285221 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FE782F59A07D3F0C89469BF8 /* Pods-BookSelector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSelector.debug.xcconfig"; path = "Target Support Files/Pods-BookSelector/Pods-BookSelector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +96,8 @@
 		EC4B4BFE28D21D8300285221 = {
 			isa = PBXGroup;
 			children = (
+				EC4B4C4B28E0371700285221 /* Fonts.swift */,
+				EC4B4C4928E034D900285221 /* SomeConstraints.swift */,
 				EC4B4C3C28D23DB700285221 /* Colors.swift */,
 				EC4B4C3128D2286200285221 /* Menegers */,
 				EC4B4C1E28D21DCA00285221 /* OpenLibrary */,
@@ -154,7 +156,6 @@
 				EC4B4C2628D21E6600285221 /* OpenLibraryModel.swift */,
 				EC4B4C4128D6496A00285221 /* OpenLibraryData.swift */,
 				EC4B4C4728D9F25100285221 /* BooksModel.swift */,
-				EC4B4C4528D78D6700285221 /* QuizData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,7 +186,6 @@
 			children = (
 				EC4B4C3228D2287D00285221 /* NetworkMenegers.swift */,
 				EC4B4C3428D22C2E00285221 /* OpenLibraryResponseData.swift */,
-				EC4B4C4328D78D5400285221 /* QuizResponseData.swift */,
 			);
 			path = Menegers;
 			sourceTree = "<group>";
@@ -333,14 +333,14 @@
 				EC4B4C2A28D21EB300285221 /* AppConfigurator.swift in Sources */,
 				EC4B4C2328D21E2800285221 /* OpenLibraryViewController.swift in Sources */,
 				EC4B4C0F28D21D8300285221 /* ViewController.swift in Sources */,
+				EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */,
 				EC4B4C2E28D21F0200285221 /* StoryboardLoadable.swift in Sources */,
 				EC4B4C2528D21E4B00285221 /* OpenLibraryView.swift in Sources */,
 				EC4B4C2728D21E6600285221 /* OpenLibraryModel.swift in Sources */,
-				EC4B4C4428D78D5500285221 /* QuizResponseData.swift in Sources */,
 				EC4B4C3A28D2324200285221 /* CollectionViewCell.swift in Sources */,
 				EC4B4C3328D2287D00285221 /* NetworkMenegers.swift in Sources */,
 				EC4B4C0B28D21D8300285221 /* AppDelegate.swift in Sources */,
-				EC4B4C4628D78D6700285221 /* QuizData.swift in Sources */,
+				EC4B4C4C28E0371700285221 /* Fonts.swift in Sources */,
 				EC4B4C0D28D21D8300285221 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
