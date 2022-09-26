@@ -9,7 +9,7 @@ import Foundation
 
 class OpenLibraryModel {
 
-    var jsonB : OpenLibraryData?
+    public var jsonB : [OpenLibraryData]?
 
     public func setSearchModelForBooks(bookTitle : String, onSuccess: @ escaping () -> Void) {
         NetworkManager.shared.openLibraryResultOfTitleSearch(dataR: bookTitle, onSuccess:  { [weak self] json in self?.jsonB = json

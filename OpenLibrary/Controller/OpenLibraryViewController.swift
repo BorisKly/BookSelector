@@ -83,6 +83,7 @@ extension OpenLibraryViewController: UISearchBarDelegate {
 
 extension OpenLibraryViewController: OpenLibraryViewControllerDelegate {
     func ttttt() {
-        model.setSearchModelForBooks(bookTitle: searchTitleText) { print("\(self.searchTitleText)") }
+        model.setSearchModelForBooks(bookTitle: searchTitleText) { [weak self] in
+            self?.mainView?.myBookItemView.reloadData(); print("\(self?.searchTitleText)") }
     }
 }

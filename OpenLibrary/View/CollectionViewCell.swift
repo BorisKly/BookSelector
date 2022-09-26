@@ -13,10 +13,10 @@ class CollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var bookTitle: UILabel!
 
-    var books: BooksModel? {
+    var book: BooksModel? {
         didSet {
-            bookTitle.text = books?.name
-            if let image = books?.imageName {
+            bookTitle.text = book?.name
+            if let image = book?.imageName {
                 bookImage.image = UIImage(named: image)
             }
         }

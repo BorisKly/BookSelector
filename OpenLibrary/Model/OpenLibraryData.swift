@@ -10,5 +10,7 @@ import Foundation
 // MARK: - OpenLibraryData structure
 
 struct OpenLibraryData: Codable {
-    let seed: [String?]
+   // let seed: [String?]
+    let title: String
+    let cover: Int?
 }

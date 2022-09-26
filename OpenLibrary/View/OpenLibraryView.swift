@@ -15,11 +15,11 @@ class OpenLibraryView: UIView {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let bookCollectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         bookCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        bookCollectionView.backgroundColor = Colors.background2
+        bookCollectionView.backgroundColor = Colors.background1
         bookCollectionView.sizeToFit()
-        layout.itemSize = CGSize(width: 70, height: 120)
+        layout.itemSize = CGSize(width: 160, height: 250)
         layout.minimumLineSpacing = 10
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         bookCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return bookCollectionView
     }()

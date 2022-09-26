@@ -28,9 +28,11 @@ struct OpenLibraryResponseData: Codable {
 
 // MARK: - WelcomeDoc
 struct WelcomeDoc: Codable {
-    let seed: [String]
+    let title: String
+    let coverI: Int?
 
     enum CodingKeys: String, CodingKey {
-        case seed
+        case title
+        case coverI = "cover_i"
     }
 }
