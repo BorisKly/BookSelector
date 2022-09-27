@@ -31,6 +31,9 @@
 		EC4B4C4828D9F25100285221 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4728D9F25100285221 /* BooksModel.swift */; };
 		EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4928E034D900285221 /* SomeConstraints.swift */; };
 		EC4B4C4C28E0371700285221 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4B28E0371700285221 /* Fonts.swift */; };
+		EC4B4C5428E3794500285221 /* PicsumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5328E3794400285221 /* PicsumViewController.swift */; };
+		EC4B4C5628E3796100285221 /* PicsumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5528E3796100285221 /* PicsumView.swift */; };
+		EC4B4C5828E385DC00285221 /* PicsumViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5728E385DB00285221 /* PicsumViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		EC4B4C4728D9F25100285221 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
 		EC4B4C4928E034D900285221 /* SomeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeConstraints.swift; sourceTree = "<group>"; };
 		EC4B4C4B28E0371700285221 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		EC4B4C5328E3794400285221 /* PicsumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumViewController.swift; sourceTree = "<group>"; };
+		EC4B4C5528E3796100285221 /* PicsumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumView.swift; sourceTree = "<group>"; };
+		EC4B4C5728E385DB00285221 /* PicsumViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumViewData.swift; sourceTree = "<group>"; };
 		FE782F59A07D3F0C89469BF8 /* Pods-BookSelector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSelector.debug.xcconfig"; path = "Target Support Files/Pods-BookSelector/Pods-BookSelector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +102,7 @@
 		EC4B4BFE28D21D8300285221 = {
 			isa = PBXGroup;
 			children = (
+				EC4B4C4F28E378E900285221 /* PicsumPhoto */,
 				EC4B4C4B28E0371700285221 /* Fonts.swift */,
 				EC4B4C4928E034D900285221 /* SomeConstraints.swift */,
 				EC4B4C3C28D23DB700285221 /* Colors.swift */,
@@ -188,6 +195,40 @@
 				EC4B4C3428D22C2E00285221 /* OpenLibraryResponseData.swift */,
 			);
 			path = Menegers;
+			sourceTree = "<group>";
+		};
+		EC4B4C4F28E378E900285221 /* PicsumPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C5228E3791200285221 /* Controller */,
+				EC4B4C5128E3790A00285221 /* View */,
+				EC4B4C5028E3790200285221 /* Model */,
+			);
+			path = PicsumPhoto;
+			sourceTree = "<group>";
+		};
+		EC4B4C5028E3790200285221 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EC4B4C5128E3790A00285221 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C5528E3796100285221 /* PicsumView.swift */,
+				EC4B4C5728E385DB00285221 /* PicsumViewData.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EC4B4C5228E3791200285221 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC4B4C5328E3794400285221 /* PicsumViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,12 +371,15 @@
 				EC4B4C4828D9F25100285221 /* BooksModel.swift in Sources */,
 				EC4B4C3028D21F2600285221 /* ScreensCoordinator.swift in Sources */,
 				EC4B4C2C28D21ED800285221 /* Coordinator.swift in Sources */,
+				EC4B4C5628E3796100285221 /* PicsumView.swift in Sources */,
 				EC4B4C2A28D21EB300285221 /* AppConfigurator.swift in Sources */,
+				EC4B4C5828E385DC00285221 /* PicsumViewData.swift in Sources */,
 				EC4B4C2328D21E2800285221 /* OpenLibraryViewController.swift in Sources */,
 				EC4B4C0F28D21D8300285221 /* ViewController.swift in Sources */,
 				EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */,
 				EC4B4C2E28D21F0200285221 /* StoryboardLoadable.swift in Sources */,
 				EC4B4C2528D21E4B00285221 /* OpenLibraryView.swift in Sources */,
+				EC4B4C5428E3794500285221 /* PicsumViewController.swift in Sources */,
 				EC4B4C2728D21E6600285221 /* OpenLibraryModel.swift in Sources */,
 				EC4B4C3A28D2324200285221 /* CollectionViewCell.swift in Sources */,
 				EC4B4C3328D2287D00285221 /* NetworkMenegers.swift in Sources */,

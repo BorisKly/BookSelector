@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 //enum CurrencyToShow: String {
 // }
@@ -41,5 +42,18 @@ class NetworkManager {
         }
         task.resume()
      }
+
+    public func openLibraryGetTitleImage(dataR: String){
+        let API = "http://covers.openLibrary.org/b/id/" + dataR + "-L.jpg"
+        guard  let apiURL = URL(string: API) else {
+            fatalError("some error")
+        }
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: apiURL) {(data, response, error) in
+            guard let data = data, error == nil else {return}
+        }
+        task.resume()
+    }
+    
 
 }
