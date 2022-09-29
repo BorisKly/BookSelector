@@ -43,17 +43,32 @@ class NetworkManager {
         task.resume()
      }
 
-    public func openLibraryGetTitleImage(dataR: String){
-        let API = "http://covers.openLibrary.org/b/id/" + dataR + "-L.jpg"
+    public func openLibraryGetTitleImage(dataR: String, onSuccess: @escaping (Data) -> () ){
+        let API = "http://covers.openLibrary.org/b/id/" + dataR + "-S.jpg"
         guard  let apiURL = URL(string: API) else {
             fatalError("some error")
         }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: apiURL) {(data, response, error) in
             guard let data = data, error == nil else {return}
+        onSuccess(data)
         }
         task.resume()
     }
-    
+
+    public func picsumImage(onSuccess: @escaping (Data) -> (), onError: @escaping (Error) -> Void ){
+
+        let API = "http://picsum.photos/200/300"
+
+        guard  let apiURL = URL(string: API) else {
+            fatalError("some error")
+        }
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: apiURL) {(data, response, error) in
+            guard let data = data, error == nil else {return}
+        onSuccess(data)
+        }
+        task.resume()
+    }
 
 }

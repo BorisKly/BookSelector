@@ -17,16 +17,11 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let itemOne = collectionView.dequeueReusableCell(withReuseIdentifier: indentifire, for: indexPath) as? CollectionViewCell
         let item = model.jsonB?[indexPath.row]
-        itemOne?.bookTitle.backgroundColor = Colors.background3
-        //itemOne?.bookTitle.sizeToFit()
-        itemOne?.bookTitle.numberOfLines = 0
-        itemOne?.bookTitle.adjustsFontSizeToFitWidth = true
         itemOne?.bookTitle.text = item?.title
-        //itemOne?.book?.name = item?.title
-        itemOne?.bookImage.image = UIImage(named: "Taras")
-        //itemOne?.book?.imageName = "Taras"
+        model.setJpg(cover: item?.cover ?? 0) { [weak self] data in
+        itemOne?.bookImage.image = UIImage(data: data)
+            }
 
-        itemOne?.backgroundColor = Colors.background2
         return itemOne ?? UICollectionViewCell()
     }
 

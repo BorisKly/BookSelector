@@ -17,7 +17,7 @@ class OpenLibraryView: UIView {
         bookCollectionView.translatesAutoresizingMaskIntoConstraints = false
         bookCollectionView.backgroundColor = Colors.background1
         bookCollectionView.sizeToFit()
-        layout.itemSize = CGSize(width: 160, height: 250)
+        layout.itemSize = CGSize(width: 100, height: 200)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .vertical
         bookCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -61,7 +61,6 @@ class OpenLibraryView: UIView {
         self.addSubview(bookFinderSearchBar)
         self.addSubview(confirmBtn)
         self.addSubview(myBookItemView)
-        //self.isUserInteractionEnabled = true
 
     }
     required init?(coder: NSCoder) {

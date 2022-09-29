@@ -8,8 +8,8 @@
 import UIKit
 
 enum AvailableScreens {
-    case openLibrary
-    case picsum
+    case openLibraryScreen
+    case detailBookViewScreen
 }
 final class ScreensCoordinator: Coordinator {
     // MARK: -
@@ -24,7 +24,7 @@ final class ScreensCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     public func start() {
-        self.jumpToScreen(.picsum)    //
+        self.jumpToScreen(.openLibraryScreen)
     }
     // MARK: -
     // MARK: Methods
@@ -32,12 +32,18 @@ final class ScreensCoordinator: Coordinator {
     private func openLibrary() {
         let controller =
             OpenLibraryViewController.startVC()
+        controller.eventHandler = { [weak self] event in
+            print(event)
+            switch event {
+            case .detailBookView :
+                self?.jumpToScreen(.detailBookViewScreen)}
+            }
         self.navigationController.pushViewController(controller, animated: true)
     }
 
-    private func picSum() {
+    private func detailBookView() {
         let controller =
-            PicsumViewController.startVC()
+            DetailOpenLibraryViewController.startVC()
         self.navigationController.pushViewController(controller, animated: true)
     }
 }
@@ -46,10 +52,10 @@ final class ScreensCoordinator: Coordinator {
 extension ScreensCoordinator {
     public func jumpToScreen(_ jumpTo: AvailableScreens) {
         switch jumpTo {
-        case .openLibrary:
+        case .openLibraryScreen:
             self.openLibrary()
-        case .picsum:
-            self.picSum()
+        case .detailBookViewScreen:
+            self.openLibrary()
         }
     }
 }

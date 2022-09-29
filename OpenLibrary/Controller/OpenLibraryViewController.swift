@@ -11,29 +11,19 @@ protocol  OpenLibraryViewControllerDelegate: AnyObject {
     func ttttt()
 }
 
+protocol CollectionViewCellDelegate: AnyObject {
+    func setOneItemForCollection()
+}
+
+enum OpenLibrary {
+    case detailBookView
+}
+
 class OpenLibraryViewController: UIViewController {
 
+    public var eventHandler: ((OpenLibrary)->())?
+
     public var model: OpenLibraryModel = OpenLibraryModel()
-
-    var listOfSearchBooks: [BooksModel] = {
-        var blankMenu = BooksModel()
-        blankMenu.imageName = "Taras"
-        blankMenu.name = "Taras Shevchenko"
-
-        var blankMenu2 = BooksModel()
-        blankMenu2.imageName = "Ostap"
-        blankMenu2.name = "Ostap Vishnya"
-
-        var blankMenu3 = BooksModel()
-        blankMenu2.imageName = "Pavlo"
-        blankMenu2.name = "Pavlo one"
-
-        var blankMenu4 = BooksModel()
-        blankMenu2.imageName = "John"
-        blankMenu2.name = "Jonn B"
-
-        return [blankMenu, blankMenu2, blankMenu3, blankMenu4]
-    }()
 
     var searchTitleText = String()
 
@@ -86,4 +76,12 @@ extension OpenLibraryViewController: OpenLibraryViewControllerDelegate {
         model.setSearchModelForBooks(bookTitle: searchTitleText) { [weak self] in
             self?.mainView?.myBookItemView.reloadData(); print("\(self?.searchTitleText)") }
     }
+}
+
+extension OpenLibraryViewController: CollectionViewCellDelegate {
+    func setOneItemForCollection() {
+        print("!!!")
+    }
+
+
 }
