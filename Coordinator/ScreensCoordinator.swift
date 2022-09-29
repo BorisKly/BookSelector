@@ -55,7 +55,7 @@ extension ScreensCoordinator {
         case .openLibraryScreen:
             self.openLibrary()
         case .detailBookViewScreen:
-            self.openLibrary()
+            self .detailBookView()
         }
     }
 }

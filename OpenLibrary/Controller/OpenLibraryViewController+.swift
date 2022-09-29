@@ -21,8 +21,13 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
         model.setJpg(cover: item?.cover ?? 0) { [weak self] data in
         itemOne?.bookImage.image = UIImage(data: data)
             }
-
         return itemOne ?? UICollectionViewCell()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = model.jsonB?[indexPath.row]
+        eventHandler?(.detailBookView([item?.cover: item?.title]))
+        
     }
 
 }

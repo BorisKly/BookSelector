@@ -16,7 +16,7 @@ protocol CollectionViewCellDelegate: AnyObject {
 }
 
 enum OpenLibrary {
-    case detailBookView
+    case detailBookView([Int?: String?])
 }
 
 class OpenLibraryViewController: UIViewController {
@@ -82,6 +82,5 @@ extension OpenLibraryViewController: CollectionViewCellDelegate {
     func setOneItemForCollection() {
         print("!!!")
     }
-
 
 }

@@ -7,13 +7,13 @@
 
 import UIKit
 enum DetailOpenLibrary {
-//    case
+//    case backToOpenLibrary
 //    case
 }
 
 class DetailOpenLibraryViewController: UIViewController {
 
-    public var eventHandler: ((DetailOpenLibrary)->())?
+ //   public var eventHandler: ((DetailOpenLibrary)->())?
 
     // MARK: - Privat Properties
 
@@ -21,11 +21,19 @@ class DetailOpenLibraryViewController: UIViewController {
         return self.view as? DetailOpenLibraryView
     }
 
+    private let data = [Int: String]()
+
+
+
+
+
     // MARK: - Init Methods
 
     public static func startVC() -> Self {
         return Self.init()
     }
+
+    
 
     // MARK: - Override Methods
 
@@ -36,8 +44,11 @@ class DetailOpenLibraryViewController: UIViewController {
         self.view = codeView
     }
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainView?.backgroundColor = UIColor.red
+        mainView?.setupUI()
 
     }
 

@@ -9,7 +9,6 @@ import UIKit
 
 class DetailOpenLibraryView: UIView {
 
-
     public var detailImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false

@@ -33,7 +33,6 @@
 		EC4B4C4C28E0371700285221 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4B28E0371700285221 /* Fonts.swift */; };
 		EC4B4C5428E3794500285221 /* DetailOpenLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5328E3794400285221 /* DetailOpenLibraryViewController.swift */; };
 		EC4B4C5628E3796100285221 /* DetailOpenLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5528E3796100285221 /* DetailOpenLibraryView.swift */; };
-		EC5F237D28E5D7DD00399189 /* OpenLibraryViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F237C28E5D7DD00399189 /* OpenLibraryViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +65,6 @@
 		EC4B4C4B28E0371700285221 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EC4B4C5328E3794400285221 /* DetailOpenLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOpenLibraryViewController.swift; sourceTree = "<group>"; };
 		EC4B4C5528E3796100285221 /* DetailOpenLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOpenLibraryView.swift; sourceTree = "<group>"; };
-		EC5F237C28E5D7DD00399189 /* OpenLibraryViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryViewControllerDelegate.swift; sourceTree = "<group>"; };
 		FE782F59A07D3F0C89469BF8 /* Pods-BookSelector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSelector.debug.xcconfig"; path = "Target Support Files/Pods-BookSelector/Pods-BookSelector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +151,6 @@
 			children = (
 				EC4B4C2228D21E2800285221 /* OpenLibraryViewController.swift */,
 				EC4B4C3628D22DE200285221 /* OpenLibraryViewController+.swift */,
-				EC5F237C28E5D7DD00399189 /* OpenLibraryViewControllerDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -371,7 +368,6 @@
 				EC4B4C4828D9F25100285221 /* BooksModel.swift in Sources */,
 				EC4B4C3028D21F2600285221 /* ScreensCoordinator.swift in Sources */,
 				EC4B4C2C28D21ED800285221 /* Coordinator.swift in Sources */,
-				EC5F237D28E5D7DD00399189 /* OpenLibraryViewControllerDelegate.swift in Sources */,
 				EC4B4C5628E3796100285221 /* DetailOpenLibraryView.swift in Sources */,
 				EC4B4C2A28D21EB300285221 /* AppConfigurator.swift in Sources */,
 				EC4B4C2328D21E2800285221 /* OpenLibraryViewController.swift in Sources */,
