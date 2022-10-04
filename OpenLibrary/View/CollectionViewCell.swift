@@ -6,15 +6,13 @@
 //
 
 import UIKit
-
+import PinLayout
 
 class CollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var bookImage: UIImageView!
 
     @IBOutlet weak var bookTitle: UILabel!
-
-    public var delegate: CollectionViewCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()

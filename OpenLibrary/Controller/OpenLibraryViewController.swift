@@ -8,15 +8,11 @@
 import UIKit
 
 protocol  OpenLibraryViewControllerDelegate: AnyObject {
-    func ttttt()
-}
-
-protocol CollectionViewCellDelegate: AnyObject {
-    func setOneItemForCollection()
+    func reloadCollectionAfterSearchChange()
 }
 
 enum OpenLibrary {
-    case detailBookView([Int?: String?])
+    case detailBookView(OpenLibraryData)
 }
 
 class OpenLibraryViewController: UIViewController {
@@ -59,28 +55,23 @@ class OpenLibraryViewController: UIViewController {
 
 }
 
+// MARK: - Extensions
+
 extension OpenLibraryViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard searchText != "" || searchText != " " else {
-            print("empty search")
             return
         }
         searchTitleText = searchText.lowercased()
-        print(searchTitleText)
     }
 }
 
 extension OpenLibraryViewController: OpenLibraryViewControllerDelegate {
-    func ttttt() {
+
+    func reloadCollectionAfterSearchChange() {
         model.setSearchModelForBooks(bookTitle: searchTitleText) { [weak self] in
-            self?.mainView?.myBookItemView.reloadData(); print("\(self?.searchTitleText)") }
+            self?.mainView?.myBookItemView.reloadData()
+        }
     }
-}
-
-extension OpenLibraryViewController: CollectionViewCellDelegate {
-    func setOneItemForCollection() {
-        print("!!!")
-    }
-
 }

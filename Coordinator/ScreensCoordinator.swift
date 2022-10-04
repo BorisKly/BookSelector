@@ -9,7 +9,8 @@ import UIKit
 
 enum AvailableScreens {
     case openLibraryScreen
-    case detailBookViewScreen
+    case detailBookViewScreen(OpenLibraryData)
+    case sampleOne
 }
 final class ScreensCoordinator: Coordinator {
     // MARK: -
@@ -35,15 +36,39 @@ final class ScreensCoordinator: Coordinator {
         controller.eventHandler = { [weak self] event in
             print(event)
             switch event {
-            case .detailBookView :
-                self?.jumpToScreen(.detailBookViewScreen)}
+            case .detailBookView(let book) :
+                self?.jumpToScreen(.detailBookViewScreen(book))}
             }
         self.navigationController.pushViewController(controller, animated: true)
     }
 
-    private func detailBookView() {
+    private func detailBookView(book: OpenLibraryData) {
+//        let controller =
+//            DetailOpenLibraryViewController.startVC()
+//        controller.model = DetailOpenLibraryModel(book: book)
+        let controller = DetailOpenLibraryViewController.startVCNew(book: book) //?
+        controller.eventHandler = { event in
+            switch event {
+            case .backToOpenLibrary:
+                self.navigationController.viewControllers.removeLast()
+            }
+        }
+        self.navigationController.pushViewController(controller, animated: true)
+    }
+
+    private func sampleOne() {
         let controller =
-            DetailOpenLibraryViewController.startVC()
+            SampleOneViewController.startVC()
+        controller.eventHandler = { [weak self] event in
+            print(event)
+            switch event {
+            case .goTo:
+                self?.jumpToScreen(.openLibraryScreen)
+            case .backTo:
+                self?.jumpToScreen(.openLibraryScreen)
+
+            }
+            }
         self.navigationController.pushViewController(controller, animated: true)
     }
 }
@@ -54,8 +79,10 @@ extension ScreensCoordinator {
         switch jumpTo {
         case .openLibraryScreen:
             self.openLibrary()
-        case .detailBookViewScreen:
-            self .detailBookView()
+        case .detailBookViewScreen(let book):
+            self .detailBookView(book: book)
+        case .sampleOne:
+            self .sampleOne()
         }
     }
 }

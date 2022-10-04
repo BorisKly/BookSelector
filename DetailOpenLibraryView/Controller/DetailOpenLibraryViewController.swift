@@ -7,14 +7,16 @@
 
 import UIKit
 enum DetailOpenLibrary {
-//    case backToOpenLibrary
+    case backToOpenLibrary
 //    case
 }
 
 class DetailOpenLibraryViewController: UIViewController {
 
- //   public var eventHandler: ((DetailOpenLibrary)->())?
+   public var eventHandler: ((DetailOpenLibrary)->())?
 
+    public var model: DetailOpenLibraryModel?
+    
     // MARK: - Privat Properties
 
     private var mainView: DetailOpenLibraryView? {
@@ -33,6 +35,12 @@ class DetailOpenLibraryViewController: UIViewController {
         return Self.init()
     }
 
+    public static func startVCNew(book: OpenLibraryData) -> Self {
+        let contrll = Self.init()
+        contrll.model = DetailOpenLibraryModel(book: book)
+        return contrll
+    }
+
     
 
     // MARK: - Override Methods
@@ -48,6 +56,8 @@ class DetailOpenLibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView?.backgroundColor = UIColor.red
+        mainView?.detailViewTitle.text = model?.book.title
+
         mainView?.setupUI()
 
     }

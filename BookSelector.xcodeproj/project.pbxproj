@@ -33,6 +33,10 @@
 		EC4B4C4C28E0371700285221 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4B28E0371700285221 /* Fonts.swift */; };
 		EC4B4C5428E3794500285221 /* DetailOpenLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5328E3794400285221 /* DetailOpenLibraryViewController.swift */; };
 		EC4B4C5628E3796100285221 /* DetailOpenLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5528E3796100285221 /* DetailOpenLibraryView.swift */; };
+		EC5F237F28E725E200399189 /* DetailOpenLibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F237E28E725E200399189 /* DetailOpenLibraryModel.swift */; };
+		EC5F238528E9A3D300399189 /* SampleOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238428E9A3D300399189 /* SampleOneViewController.swift */; };
+		EC5F238728E9A3EE00399189 /* SampleOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238628E9A3EE00399189 /* SampleOneView.swift */; };
+		EC5F238928E9A4CE00399189 /* SampleOneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238828E9A4CE00399189 /* SampleOneData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		EC4B4C4B28E0371700285221 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EC4B4C5328E3794400285221 /* DetailOpenLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOpenLibraryViewController.swift; sourceTree = "<group>"; };
 		EC4B4C5528E3796100285221 /* DetailOpenLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOpenLibraryView.swift; sourceTree = "<group>"; };
+		EC5F237E28E725E200399189 /* DetailOpenLibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOpenLibraryModel.swift; sourceTree = "<group>"; };
+		EC5F238428E9A3D300399189 /* SampleOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneViewController.swift; sourceTree = "<group>"; };
+		EC5F238628E9A3EE00399189 /* SampleOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneView.swift; sourceTree = "<group>"; };
+		EC5F238828E9A4CE00399189 /* SampleOneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneData.swift; sourceTree = "<group>"; };
 		FE782F59A07D3F0C89469BF8 /* Pods-BookSelector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSelector.debug.xcconfig"; path = "Target Support Files/Pods-BookSelector/Pods-BookSelector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +108,8 @@
 		EC4B4BFE28D21D8300285221 = {
 			isa = PBXGroup;
 			children = (
-				EC4B4C4F28E378E900285221 /* PicsumPhoto */,
+				EC5F238028E9A35D00399189 /* SampleOne */,
+				EC4B4C4F28E378E900285221 /* DetailOpenLibraryView */,
 				EC4B4C4B28E0371700285221 /* Fonts.swift */,
 				EC4B4C4928E034D900285221 /* SomeConstraints.swift */,
 				EC4B4C3C28D23DB700285221 /* Colors.swift */,
@@ -195,19 +204,20 @@
 			path = Menegers;
 			sourceTree = "<group>";
 		};
-		EC4B4C4F28E378E900285221 /* PicsumPhoto */ = {
+		EC4B4C4F28E378E900285221 /* DetailOpenLibraryView */ = {
 			isa = PBXGroup;
 			children = (
 				EC4B4C5228E3791200285221 /* Controller */,
 				EC4B4C5128E3790A00285221 /* View */,
 				EC4B4C5028E3790200285221 /* Model */,
 			);
-			path = PicsumPhoto;
+			path = DetailOpenLibraryView;
 			sourceTree = "<group>";
 		};
 		EC4B4C5028E3790200285221 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EC5F237E28E725E200399189 /* DetailOpenLibraryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +236,40 @@
 				EC4B4C5328E3794400285221 /* DetailOpenLibraryViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		EC5F238028E9A35D00399189 /* SampleOne */ = {
+			isa = PBXGroup;
+			children = (
+				EC5F238128E9A3AA00399189 /* Controller */,
+				EC5F238328E9A3BC00399189 /* View */,
+				EC5F238228E9A3B500399189 /* Model */,
+			);
+			name = SampleOne;
+			sourceTree = "<group>";
+		};
+		EC5F238128E9A3AA00399189 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EC5F238428E9A3D300399189 /* SampleOneViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EC5F238228E9A3B500399189 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EC5F238828E9A4CE00399189 /* SampleOneData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EC5F238328E9A3BC00399189 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EC5F238628E9A3EE00399189 /* SampleOneView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC5F237F28E725E200399189 /* DetailOpenLibraryModel.swift in Sources */,
 				EC4B4C3528D22C2E00285221 /* OpenLibraryResponseData.swift in Sources */,
 				EC4B4C4228D6496B00285221 /* OpenLibraryData.swift in Sources */,
 				EC4B4C3D28D23DB700285221 /* Colors.swift in Sources */,
@@ -372,13 +417,16 @@
 				EC4B4C2A28D21EB300285221 /* AppConfigurator.swift in Sources */,
 				EC4B4C2328D21E2800285221 /* OpenLibraryViewController.swift in Sources */,
 				EC4B4C0F28D21D8300285221 /* ViewController.swift in Sources */,
+				EC5F238928E9A4CE00399189 /* SampleOneData.swift in Sources */,
 				EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */,
 				EC4B4C2E28D21F0200285221 /* StoryboardLoadable.swift in Sources */,
 				EC4B4C2528D21E4B00285221 /* OpenLibraryView.swift in Sources */,
 				EC4B4C5428E3794500285221 /* DetailOpenLibraryViewController.swift in Sources */,
 				EC4B4C2728D21E6600285221 /* OpenLibraryModel.swift in Sources */,
 				EC4B4C3A28D2324200285221 /* CollectionViewCell.swift in Sources */,
+				EC5F238728E9A3EE00399189 /* SampleOneView.swift in Sources */,
 				EC4B4C3328D2287D00285221 /* NetworkMenegers.swift in Sources */,
+				EC5F238528E9A3D300399189 /* SampleOneViewController.swift in Sources */,
 				EC4B4C0B28D21D8300285221 /* AppDelegate.swift in Sources */,
 				EC4B4C4C28E0371700285221 /* Fonts.swift in Sources */,
 				EC4B4C0D28D21D8300285221 /* SceneDelegate.swift in Sources */,

@@ -25,9 +25,10 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = model.jsonB?[indexPath.row]
-        eventHandler?(.detailBookView([item?.cover: item?.title]))
-        
+        guard let item = model.jsonB?[indexPath.row] else {
+            return
+        }
+        eventHandler?(.detailBookView(item))
+       
     }
-
 }

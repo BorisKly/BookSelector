@@ -17,7 +17,7 @@ class DetailOpenLibraryView: UIView {
         return image
     }()
 
-    private let detailViewTitle: UILabel = {
+    public let detailViewTitle: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.backgroundColor = Colors.backgroundPicSum2
