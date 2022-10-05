@@ -6,14 +6,13 @@
 //
 
 import UIKit
-enum DetailOpenLibrary {
-    case backToOpenLibrary
-//    case
+enum DetailOpenLibraryJumpTo {
+    case backToOpenLibraryEvent
 }
 
 class DetailOpenLibraryViewController: UIViewController {
 
-   public var eventHandler: ((DetailOpenLibrary)->())?
+    public var eventHandler: ((DetailOpenLibraryJumpTo)->())?
 
     public var model: DetailOpenLibraryModel?
     
@@ -23,12 +22,6 @@ class DetailOpenLibraryViewController: UIViewController {
         return self.view as? DetailOpenLibraryView
     }
 
-    private let data = [Int: String]()
-
-
-
-
-
     // MARK: - Init Methods
 
     public static func startVC() -> Self {
@@ -36,30 +29,49 @@ class DetailOpenLibraryViewController: UIViewController {
     }
 
     public static func startVCNew(book: OpenLibraryData) -> Self {
-        let contrll = Self.init()
-        contrll.model = DetailOpenLibraryModel(book: book)
-        return contrll
+        let controller = Self.init()
+        controller.model = DetailOpenLibraryModel(book: book)
+        return controller
     }
-
-    
 
     // MARK: - Override Methods
 
     override func loadView() {
         let codeView = DetailOpenLibraryView(frame: CGRect.zero)
         codeView.backgroundColor = Colors.backgroundPicSum1
-
         self.view = codeView
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainView?.backgroundColor = UIColor.red
-        mainView?.detailViewTitle.text = model?.book.title
-
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureDone))
+        mainView?.addGestureRecognizer(tapGesture)
+        mainView?.backgroundColor = Colors.backgroundPicSum3
         mainView?.setupUI()
+        setImageLarge()
+        print("This is ViewDidLoad")
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(animated)
+        print("This is viewDidAppear")
+    }
+
+    override func viewDidLayoutSubviews() {
+        print("This is viewDidLayoutSubviews")
+    }
+
+    private func setImageLarge() {
+        mainView?.detailViewTitle.text = model?.book.title
+        model?.setJpgLarge(cover: model?.book.cover ?? 0) { [weak self] data in
+            self?.mainView?.detailImageView.image = UIImage(data: data)
+            if data.isEmpty {
+                self?.mainView?.detailImageView.image = UIImage(named: "noImage")
+            }
+        }
+}
+    @objc private func tapGestureDone() {
+        eventHandler?(.backToOpenLibraryEvent)
     }
 
 }

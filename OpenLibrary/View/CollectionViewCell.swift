@@ -16,7 +16,12 @@ class CollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setConstraintsForOneItemCollection()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let padding: CGFloat = 1
+        self.setConstraintsForOneItemCollection(pad: padding)
         self.setOptionsForOneItemCollection()
     }
 
@@ -28,16 +33,22 @@ class CollectionViewCell: UICollectionViewCell {
         bookImage.backgroundColor = Colors.backgroundPicSum2
     }
 
-    private func setConstraintsForOneItemCollection() {
-        bookImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -2).isActive = true
-        bookImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2).isActive = true
-        bookImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
-        bookImage.heightAnchor.constraint(equalToConstant: 200).isActive = true
+    private func setConstraintsForOneItemCollection(pad: CGFloat) {
+        bookImage.pin
+            .top(pin.safeArea)
+            .left(pin.safeArea)
+            .height(150)
+            .width(100)
+            .aspectRatio()
 
-        bookTitle.trailingAnchor.constraint(equalTo: bookImage.trailingAnchor).isActive = true
-        bookTitle.leadingAnchor.constraint(equalTo: bookImage.leadingAnchor).isActive = true
-        bookTitle.topAnchor.constraint(equalTo: bookImage.bottomAnchor, constant: -1).isActive = true
-        bookTitle.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        bookTitle.pin
+            .below(of: bookImage, aligned: .left)
+            .width(of: bookImage)
+            .height(50)
+            .pinEdges()
+            .marginTop(1)
+            .sizeToFit(.width)
+
     }
 
 }

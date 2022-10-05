@@ -18,9 +18,14 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
         let itemOne = collectionView.dequeueReusableCell(withReuseIdentifier: indentifire, for: indexPath) as? CollectionViewCell
         let item = model.jsonB?[indexPath.row]
         itemOne?.bookTitle.text = item?.title
-        model.setJpg(cover: item?.cover ?? 0) { [weak self] data in
-        itemOne?.bookImage.image = UIImage(data: data)
+        itemOne?.bookImage.image = UIImage(named: "noImage")
+        model.setJpg(cover: item?.cover ?? 0) { [weak self, item] data in
+            if itemOne?.bookTitle.text == item?.title {
+                itemOne?.bookImage.image = UIImage(data: data)
             }
+            if item?.cover == nil  {itemOne?.bookImage.image = UIImage(named: "noImage")
+            }
+        }
         return itemOne ?? UICollectionViewCell()
     }
 
@@ -28,7 +33,7 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
         guard let item = model.jsonB?[indexPath.row] else {
             return
         }
-        eventHandler?(.detailBookView(item))
+        eventHandler?(.detailBookViewEvent(item))
        
     }
 }

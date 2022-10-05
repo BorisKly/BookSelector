@@ -31,8 +31,4 @@ class OpenLibraryModel {
         } )
     }
 
-    public func picsumImage(){
-        
-    }
-
 }

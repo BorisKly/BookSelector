@@ -15,7 +15,7 @@ class OpenLibraryView: UIView {
         let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let bookCollectionView:UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         bookCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        bookCollectionView.backgroundColor = Colors.backgroundPicSum1
+        bookCollectionView.backgroundColor = Colors.backgroundPicSum2
         layout.itemSize = CGSize(width: 100, height: 200)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .vertical
@@ -34,7 +34,7 @@ class OpenLibraryView: UIView {
         let txtField = UISearchBar()
         txtField.isUserInteractionEnabled = true
         txtField.translatesAutoresizingMaskIntoConstraints = false
-        txtField.backgroundColor = Colors.background2
+        txtField.backgroundColor = Colors.backgroundPicSum3
         txtField.sizeToFit()
         txtField.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
         return txtField
@@ -70,6 +70,7 @@ class OpenLibraryView: UIView {
         super.layoutSubviews()
         let padding: CGFloat = 20
         setConstraints(pad: padding)
+        print("Run layoutSubviews")
     }
     // MARK: - Public Methods
 
@@ -104,7 +105,7 @@ class OpenLibraryView: UIView {
                      """
     }
 
-    private func setConstraints(pad: CGFloat) {
+    public func setConstraints(pad: CGFloat) {
 
         bookFinderLbl.pin
             .top(pin.safeArea)
@@ -112,42 +113,26 @@ class OpenLibraryView: UIView {
             .right(pin.safeArea)
             .margin(pad)
             .height(50)
-//        bookFinderLbl.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-//        bookFinderLbl.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-//        bookFinderLbl.topAnchor.constraint(equalTo: self.topAnchor, constant: 60).isActive = true
-//        bookFinderLbl.heightAnchor.constraint(equalToConstant: 40).isActive = true
 
         bookFinderSearchBar.pin
             .below(of: bookFinderLbl, aligned: .left)
             .width(of: bookFinderLbl)
             .marginTop(10)
             .height(50)
-            //.sizeToFit(.width)
-//
-//        bookFinderSearchBar.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor).isActive = true
-//        bookFinderSearchBar.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor).isActive = true
-//        bookFinderSearchBar.topAnchor.constraint(equalTo: bookFinderLbl.bottomAnchor, constant: 20).isActive = true
-//        bookFinderSearchBar.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            .sizeToFit(.width)
+
         confirmBtn.pin
             .below(of: bookFinderSearchBar, aligned: .left)
             .width(of: bookFinderLbl)
             .marginTop(10)
             .height(40)
-            //.sizeToFit(.width)
+            .sizeToFit(.width)
 
-//        confirmBtn.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor).isActive = true
-//        confirmBtn.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor).isActive = true
-//        confirmBtn.topAnchor.constraint(equalTo: bookFinderSearchBar.bottomAnchor, constant: 20).isActive = true
-//        confirmBtn.heightAnchor.constraint(equalToConstant: 40).isActive = true
         myBookItemView.pin
             .below(of: confirmBtn, aligned: .left)
             .width(of: bookFinderLbl)
             .marginTop(10)
             .bottom(pin.safeArea)
-//        myBookItemView.trailingAnchor.constraint(equalTo: bookFinderLbl.trailingAnchor, constant: -20).isActive = true
-//        myBookItemView.leadingAnchor.constraint(equalTo: bookFinderLbl.leadingAnchor, constant: 20).isActive = true
-//        myBookItemView.topAnchor.constraint(equalTo: confirmBtn.bottomAnchor, constant: 20).isActive = true
-//        myBookItemView.heightAnchor.constraint(equalToConstant: 500).isActive = true
 
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PinLayout
 
 class DetailOpenLibraryView: UIView {
 
@@ -20,6 +21,7 @@ class DetailOpenLibraryView: UIView {
     public let detailViewTitle: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.textAlignment = .center
         lbl.backgroundColor = Colors.backgroundPicSum2
         lbl.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
         return lbl
@@ -31,6 +33,13 @@ class DetailOpenLibraryView: UIView {
         self.addSubview(detailViewTitle)
 
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let padding: CGFloat = 20
+        setConstraints(pad: padding)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,24 +47,21 @@ class DetailOpenLibraryView: UIView {
     // MARK: - Public Methods
 
     public func setupUI() {
-        setConstraints()
     }
 
-    @objc func loadImage() {
+    private func setConstraints(pad: CGFloat) {
 
-    }
+        detailImageView.pin.top(pin.safeArea)
+            .left(pin.safeArea)
+            .right(pin.safeArea)
+            .height(600)
+            .margin(pad)
 
-    private func setConstraints() {
-
-        detailImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
-        detailImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
-        detailImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 60).isActive = true
-        detailImageView.heightAnchor.constraint(equalToConstant: 600).isActive = true
-
-        detailViewTitle.trailingAnchor.constraint(equalTo: detailViewTitle.trailingAnchor).isActive = true
-        detailViewTitle.leadingAnchor.constraint(equalTo: detailViewTitle.leadingAnchor).isActive = true
-        detailViewTitle.topAnchor.constraint(equalTo: detailImageView.bottomAnchor, constant: 20).isActive = true
-        detailViewTitle.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        detailViewTitle.pin
+            .below(of: detailImageView, aligned: .left)
+            .width(of: detailImageView)
+            .marginTop(pad)
+            .sizeToFit(.width)
 
     }
 }

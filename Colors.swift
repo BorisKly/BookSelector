@@ -15,12 +15,10 @@ public enum Colors {
 
     static let background5 = UIColor(red: 0.73, green: 0.9, blue: 0.73, alpha: 1)
 
-    static let backgroundPicSum1 = UIColor(red: 0.33, green: 0.9, blue: 0.73, alpha: 1)
-    static let backgroundPicSum2 = UIColor(red: 0.4, green: 0.75, blue: 0.73, alpha: 1)
+    static let backgroundPicSum1 = UIColor(red: 0.75, green: 0.9, blue: 0.83, alpha: 1)
+    static let backgroundPicSum2 = UIColor(red: 0.73, green: 0.88, blue: 0.82, alpha: 1)
 
-
-
-
+    static let backgroundPicSum3 = UIColor(red: 0.71, green: 0.86, blue: 0.80, alpha: 1)
 
     static let textColor1 = UIColor.black
     static let textShadowColor1 = UIColor.lightGray

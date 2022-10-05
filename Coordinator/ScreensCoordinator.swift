@@ -34,9 +34,8 @@ final class ScreensCoordinator: Coordinator {
         let controller =
             OpenLibraryViewController.startVC()
         controller.eventHandler = { [weak self] event in
-            print(event)
             switch event {
-            case .detailBookView(let book) :
+            case .detailBookViewEvent(let book) :
                 self?.jumpToScreen(.detailBookViewScreen(book))}
             }
         self.navigationController.pushViewController(controller, animated: true)
@@ -46,10 +45,10 @@ final class ScreensCoordinator: Coordinator {
 //        let controller =
 //            DetailOpenLibraryViewController.startVC()
 //        controller.model = DetailOpenLibraryModel(book: book)
-        let controller = DetailOpenLibraryViewController.startVCNew(book: book) //?
+        let controller = DetailOpenLibraryViewController.startVCNew(book: book) //
         controller.eventHandler = { event in
             switch event {
-            case .backToOpenLibrary:
+            case .backToOpenLibraryEvent:
                 self.navigationController.viewControllers.removeLast()
             }
         }

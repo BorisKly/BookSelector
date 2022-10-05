@@ -11,13 +11,13 @@ protocol  OpenLibraryViewControllerDelegate: AnyObject {
     func reloadCollectionAfterSearchChange()
 }
 
-enum OpenLibrary {
-    case detailBookView(OpenLibraryData)
+enum OpenLibraryJumpTo {
+    case detailBookViewEvent(OpenLibraryData)
 }
 
 class OpenLibraryViewController: UIViewController {
 
-    public var eventHandler: ((OpenLibrary)->())?
+    public var eventHandler: ((OpenLibraryJumpTo)->())?
 
     public var model: OpenLibraryModel = OpenLibraryModel()
 
@@ -39,7 +39,7 @@ class OpenLibraryViewController: UIViewController {
 
     override func loadView() {
         let codeView = OpenLibraryView(frame: CGRect.zero)
-        codeView.backgroundColor = Colors.background1
+        codeView.backgroundColor = Colors.backgroundPicSum1
 
         self.view = codeView
     }
