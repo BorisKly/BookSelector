@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-//enum CurrencyToShow: String {
-// }
-
 class NetworkManager {
     
     private enum Covers {
