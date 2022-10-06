@@ -26,14 +26,12 @@ class OpenLibraryView: UIView {
     private let bookFinderLbl: UILabel = {
         let lblField = UILabel()
         lblField.isUserInteractionEnabled = true
-        lblField.translatesAutoresizingMaskIntoConstraints = false
         return lblField
     }()
 
     public let bookFinderSearchBar: UISearchBar = {
         let txtField = UISearchBar()
         txtField.isUserInteractionEnabled = true
-        txtField.translatesAutoresizingMaskIntoConstraints = false
         txtField.backgroundColor = Colors.backgroundPicSum3
         txtField.sizeToFit()
         txtField.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
@@ -42,7 +40,6 @@ class OpenLibraryView: UIView {
 
     private let confirmBtn: UIButton = {
         let btn = UIButton()
-        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = Colors.background2
         btn.setTitleColor(Colors.background4, for: .normal)
         btn.setTitle("Press to show result", for: .normal)
@@ -91,9 +88,7 @@ class OpenLibraryView: UIView {
     private func setTopLabelForSearchScreen(label: UILabel) {
         label.backgroundColor = Colors.background3
         label.textAlignment = .center
-        label.textColor = Colors.textColor2
-        label.shadowColor = Colors.textShadowColor1
-        label.shadowOffset = CGSize(width: 2, height: 2)
+        label.textColor = Colors.textShadowColor1
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.adjustsFontSizeToFitWidth = true

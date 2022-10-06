@@ -37,14 +37,14 @@ class CollectionViewCell: UICollectionViewCell {
         bookImage.pin
             .top(pin.safeArea)
             .left(pin.safeArea)
-            .height(150)
-            .width(100)
+            //.height(150)
+            //.width(100)
             .aspectRatio()
 
         bookTitle.pin
             .below(of: bookImage, aligned: .left)
             .width(of: bookImage)
-            .height(50)
+            //.height(50)
             .pinEdges()
             .marginTop(1)
             .sizeToFit(.width)
