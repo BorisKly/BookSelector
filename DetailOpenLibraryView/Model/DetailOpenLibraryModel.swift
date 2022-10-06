@@ -8,14 +8,24 @@
 import Foundation
 
 class DetailOpenLibraryModel {
+    // MARK: -
+    // MARK: Public Properties
+
     public var book: OpenLibraryData
 
+    // MARK: -
+    // MARK: Private Properties
+    
     private var imageCash: [Int : Data] = [:]
 
+    // MARK: -
+    // MARK: Init and Deinit
     init(book: OpenLibraryData) {
         self.book = book
     }
 
+    // MARK: -
+    // MARK: Public Methods
     public func setJpgLarge(cover: Int, onSuccess: @ escaping (Data) -> Void) {
         if let image = imageCash[cover] {
             onSuccess(image)
@@ -26,6 +36,6 @@ class DetailOpenLibraryModel {
             DispatchQueue.main.async {
                 onSuccess(data)
             }
-        } )
+        })
     }
 }

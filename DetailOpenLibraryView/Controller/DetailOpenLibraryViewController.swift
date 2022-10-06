@@ -12,17 +12,22 @@ enum DetailOpenLibraryJumpTo {
 
 class DetailOpenLibraryViewController: UIViewController {
 
+    // MARK: -
+    // MARK: Public Properties
+
     public var eventHandler: ((DetailOpenLibraryJumpTo)->())?
 
     public var model: DetailOpenLibraryModel?
     
-    // MARK: - Privat Properties
+    // MARK: -
+    // MARK: Private Properties
 
     private var mainView: DetailOpenLibraryView? {
         return self.view as? DetailOpenLibraryView
     }
 
-    // MARK: - Init Methods
+    // MARK: -
+    // MARK: Init and Deinit
 
     public static func startVC() -> Self {
         return Self.init()
@@ -33,8 +38,9 @@ class DetailOpenLibraryViewController: UIViewController {
         controller.model = DetailOpenLibraryModel(book: book)
         return controller
     }
-
-    // MARK: - Override Methods
+    
+    // MARK: -
+    // MARK: Override Methods
 
     override func loadView() {
         let codeView = DetailOpenLibraryView(frame: CGRect.zero)
@@ -60,6 +66,9 @@ class DetailOpenLibraryViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         print("This is viewDidLayoutSubviews")
     }
+
+    // MARK: -
+    // MARK: Private Methods
 
     private func setImageLarge() {
         mainView?.detailViewTitle.text = model?.book.title
