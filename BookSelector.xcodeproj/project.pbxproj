@@ -37,6 +37,7 @@
 		EC5F238528E9A3D300399189 /* SampleOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238428E9A3D300399189 /* SampleOneViewController.swift */; };
 		EC5F238728E9A3EE00399189 /* SampleOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238628E9A3EE00399189 /* SampleOneView.swift */; };
 		EC5F238928E9A4CE00399189 /* SampleOneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238828E9A4CE00399189 /* SampleOneData.swift */; };
+		ECCA862828F47662002AFB76 /* Covers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA862728F47662002AFB76 /* Covers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		EC5F238428E9A3D300399189 /* SampleOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneViewController.swift; sourceTree = "<group>"; };
 		EC5F238628E9A3EE00399189 /* SampleOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneView.swift; sourceTree = "<group>"; };
 		EC5F238828E9A4CE00399189 /* SampleOneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneData.swift; sourceTree = "<group>"; };
+		ECCA862728F47662002AFB76 /* Covers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Covers.swift; path = Menegers/Covers.swift; sourceTree = "<group>"; };
 		FE782F59A07D3F0C89469BF8 /* Pods-BookSelector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSelector.debug.xcconfig"; path = "Target Support Files/Pods-BookSelector/Pods-BookSelector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				EC4B4C4B28E0371700285221 /* Fonts.swift */,
 				EC4B4C4928E034D900285221 /* SomeConstraints.swift */,
 				EC4B4C3C28D23DB700285221 /* Colors.swift */,
+				ECCA862728F47662002AFB76 /* Covers.swift */,
 				EC4B4C3128D2286200285221 /* Menegers */,
 				EC4B4C1E28D21DCA00285221 /* OpenLibrary */,
 				EC4B4C2828D21E9C00285221 /* Coordinator */,
@@ -420,6 +423,7 @@
 				EC5F238928E9A4CE00399189 /* SampleOneData.swift in Sources */,
 				EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */,
 				EC4B4C2E28D21F0200285221 /* StoryboardLoadable.swift in Sources */,
+				ECCA862828F47662002AFB76 /* Covers.swift in Sources */,
 				EC4B4C2528D21E4B00285221 /* OpenLibraryView.swift in Sources */,
 				EC4B4C5428E3794500285221 /* DetailOpenLibraryViewController.swift in Sources */,
 				EC4B4C2728D21E6600285221 /* OpenLibraryModel.swift in Sources */,

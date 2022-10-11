@@ -14,7 +14,7 @@ class OpenLibraryModel {
     private var imageCash: [Int : Data] = [:]
 
     public func setSearchModelForBooks(bookTitle : String, onSuccess: @ escaping () -> Void) {
-        NetworkManager.shared.openLibraryResultOfTitleSearch(dataR: bookTitle, onSuccess:  { [weak self] json in self?.jsonB = json
+        NetworkManager.shared.resultOfTitleSearch(dataR: bookTitle, onSuccess:  { [weak self] json in self?.jsonB = json
             DispatchQueue.main.async{ onSuccess() }
         }, onError: { print($0)} )
 }
@@ -23,8 +23,8 @@ class OpenLibraryModel {
             onSuccess(image)
             return
         }
-        NetworkManager.shared.openLibraryGetTitleImage(dataR: String(cover), onSuccess: { [weak self] data in
-            //self?.imageCash[cover] = data
+        NetworkManager.shared.getTitleImage(imageCoverData: String(cover), size: Covers.small,  onSuccess: { [weak self] data in
+            self?.imageCash[cover] = data
             DispatchQueue.main.async {
                 onSuccess(data)
             }

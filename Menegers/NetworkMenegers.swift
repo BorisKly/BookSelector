@@ -9,11 +9,6 @@ import Foundation
 import UIKit
 
 class NetworkManager {
-    
-    private enum Covers {
-      static let large = "-L.jpg"
-      static let small = "-S.jpg"
-    }
 
     // MARK: - Public Properties
 
@@ -29,7 +24,7 @@ class NetworkManager {
 
     // MARK: - Public Methods
 
-    public func openLibraryResultOfTitleSearch(dataR: String, onSuccess: @escaping ([OpenLibraryData]) -> (), onError: (Error) ->()) {
+    public func resultOfTitleSearch(dataR: String, onSuccess: @escaping ([OpenLibraryData]) -> (), onError: (Error) ->()) {
         guard let url = URL(string: urlSearch + "?title=\(dataR)") else { return }
         let task = URLSession.shared.dataTask(with: url ){ (data, response, error) in
             guard let data = data,
@@ -48,28 +43,15 @@ class NetworkManager {
         task.resume()
      }
 
-    public func openLibraryGetTitleImage(dataR: String, onSuccess: @escaping (Data) -> () ){
-        let API = urlCover + dataR + Covers.small
+    public func getTitleImage(imageCoverData: String, size: Covers, onSuccess: @escaping (Data) -> () ){
+        let API = urlCover + imageCoverData + size.rawValue
         guard  let apiURL = URL(string: API) else {
             fatalError("some error")
         }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: apiURL) {(data, response, error) in
             guard let data = data, error == nil else {return}
-        onSuccess(data)
-        }
-        task.resume()
-    }
-
-    public func detailOpenLibraryGetTitleImageLarge(dataR: String, onSuccess: @escaping (Data) -> () ){
-        let API = urlCover + dataR + Covers.large
-        guard  let apiURL = URL(string: API) else {
-            fatalError("some error")
-        }
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: apiURL) {(data, response, error) in
-            guard let data = data, error == nil else {return}
-        onSuccess(data)
+            onSuccess(data)
         }
         task.resume()
     }
