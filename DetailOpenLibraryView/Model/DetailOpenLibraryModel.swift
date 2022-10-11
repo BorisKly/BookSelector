@@ -15,7 +15,7 @@ class DetailOpenLibraryModel {
 
     // MARK: -
     // MARK: Private Properties
-    
+
     private var imageCash: [Int : Data] = [:]
 
     // MARK: -
@@ -26,12 +26,14 @@ class DetailOpenLibraryModel {
 
     // MARK: -
     // MARK: Public Methods
+
     public func setJpgLarge(cover: Int, onSuccess: @ escaping (Data) -> Void) {
-        if let image = imageCash[cover] {
-            onSuccess(image)
+        if let data = imageCash[cover] {
+            onSuccess(data)
             return
         }
-        NetworkManager.shared.detailOpenLibraryGetTitleImageLarge(dataR: String(cover), onSuccess: { [weak self] data in
+
+        NetworkManager.shared.getTitleImage(imageCoverData: String(cover), size: .large, onSuccess: { [weak self] data in
             self?.imageCash[cover] = data
             DispatchQueue.main.async {
                 onSuccess(data)

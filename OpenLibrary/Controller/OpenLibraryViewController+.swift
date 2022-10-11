@@ -19,12 +19,12 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
         let item = model.jsonB?[indexPath.row]
         itemOne?.bookTitle.text = item?.title
         itemOne?.bookImage.image = UIImage(named: "noImage")
-        model.setJpg(cover: item?.cover ?? 0) { [weak self, item] data in
-            if itemOne?.bookTitle.text == item?.title {
-                itemOne?.bookImage.image = UIImage(data: data)
+
+        model.setJpg(cover: item?.cover ?? 0) { [weak self] data in
+            guard item?.cover != nil else {
+                return
             }
-            if item?.cover == nil  {itemOne?.bookImage.image = UIImage(named: "noImage")
-            }
+            itemOne?.bookImage.image = UIImage(data: data)
         }
         return itemOne ?? UICollectionViewCell()
     }
