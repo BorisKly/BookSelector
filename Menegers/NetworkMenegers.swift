@@ -14,6 +14,10 @@ class NetworkManager {
 
     public static let shared = NetworkManager()
 
+    private let cache = NSCache<NSString, UIImage>()
+
+    private let cacheLarge = NSCache<NSString, UIImage>()
+
     private let urlSearch = "https://openlibrary.org/search.json"
 
     private let urlCover = "http://covers.openLibrary.org/b/id/"
@@ -49,11 +53,74 @@ class NetworkManager {
             fatalError("some error")
         }
         let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: apiURL) {(data, response, error) in
+        let task = session.dataTask(with: apiURL) {[weak self] (data, response, error) in
             guard let data = data, error == nil else {return}
             onSuccess(data)
         }
         task.resume()
     }
 
+    public func fetchImage(imageCoverData: String, size: Covers, onSuccess: @escaping (UIImage?) -> Void ){
+
+        if let image = cache.object(forKey: NSString(string: imageCoverData)) {
+            print("Using Caching")
+            onSuccess(image)
+            return
+        }
+
+        let API = urlCover + imageCoverData + size.rawValue
+        guard  let apiURL = URL(string: API) else {
+            onSuccess(nil)
+            return
+        }
+        print("Fetching Image")
+        let task = URLSession.shared.dataTask(with: apiURL){ [weak self]
+            data, _, error in
+            guard let dataN =  data, error == nil else {
+                onSuccess(nil)
+                return
+            }
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: dataN) else {
+                    onSuccess(nil)
+                    return
+                }
+                self?.cache.setObject(image, forKey: imageCoverData as NSString)
+                onSuccess(image)
+            }
+        }
+        task.resume()
+    }
+
+    public func fetchImageLarge(imageCoverData: String, size: Covers, onSuccess: @escaping (UIImage?) -> Void ){
+
+        if let image = cacheLarge.object(forKey: NSString(string: imageCoverData)) {
+            print("Using Caching")
+            onSuccess(image)
+            return
+        }
+
+        let API = urlCover + imageCoverData + size.rawValue
+        guard  let apiURL = URL(string: API) else {
+            onSuccess(nil)
+            return
+        }
+        print("Fetching Image")
+        let task = URLSession.shared.dataTask(with: apiURL){ [weak self]
+            data, _, error in
+            guard let dataN =  data, error == nil else {
+                onSuccess(nil)
+                return
+            }
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: dataN) else {
+                    onSuccess(nil)
+                    return
+                }
+                self?.cacheLarge.setObject(image, forKey: imageCoverData as NSString)
+                onSuccess(image)
+            }
+        }
+        task.resume()
+    }
 }

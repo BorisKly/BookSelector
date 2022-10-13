@@ -72,12 +72,18 @@ class DetailOpenLibraryViewController: UIViewController {
 
     private func setImageLarge() {
         mainView?.detailViewTitle.text = model?.book.title
-        model?.setJpgLarge(cover: model?.book.cover ?? 0) { [weak self] data in
-            self?.mainView?.detailImageView.image = UIImage(data: data)
-            if data.isEmpty {
-                self?.mainView?.detailImageView.image = UIImage(named: "noImage")
+        mainView?.detailImageView.image = UIImage(named: "noImage")
+        if  let itemcover = model?.book.cover  {
+            NetworkManager.shared.fetchImageLarge(imageCoverData: String(itemcover), size: Covers.large ) { [weak self] data in
+                self?.mainView?.detailImageView.image = data
+                }
             }
-        }
+//        model?.setJpgLarge(cover: model?.book.cover ?? 0) { [weak self] data in
+//            self?.mainView?.detailImageView.image = UIImage(data: data)
+//            if data.isEmpty {
+//                self?.mainView?.detailImageView.image = UIImage(named: "noImage")
+//            }
+//        }
 }
     @objc private func tapGestureDone() {
         eventHandler?(.backToOpenLibraryEvent)
