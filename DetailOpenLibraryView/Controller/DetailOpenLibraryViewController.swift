@@ -15,7 +15,7 @@ class DetailOpenLibraryViewController: UIViewController {
     // MARK: -
     // MARK: Public Properties
 
-    public var eventHandler: ((DetailOpenLibraryJumpTo)->())?
+    public var eventHandler: ((DetailOpenLibraryJumpTo) -> Void)?
 
     public var model: DetailOpenLibraryModel?
     
@@ -55,16 +55,13 @@ class DetailOpenLibraryViewController: UIViewController {
         mainView?.backgroundColor = Colors.backgroundPicSum3
         mainView?.setupUI()
         setImageLarge()
-        print("This is ViewDidLoad")
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(animated)
-        print("This is viewDidAppear")
     }
 
     override func viewDidLayoutSubviews() {
-        print("This is viewDidLayoutSubviews")
     }
 
     // MARK: -
@@ -73,17 +70,13 @@ class DetailOpenLibraryViewController: UIViewController {
     private func setImageLarge() {
         mainView?.detailViewTitle.text = model?.book.title
         mainView?.detailImageView.image = UIImage(named: "noImage")
-        if  let itemcover = model?.book.cover  {
-            NetworkManager.shared.fetchImageLarge(imageCoverData: String(itemcover), size: Covers.large ) { [weak self] data in
-                self?.mainView?.detailImageView.image = data
+        if  let item = model?.book.cover {
+            model?.setJpgLarge(itemcover: item) { [weak self] data in
+                DispatchQueue.main.async {
+                    self?.mainView?.detailImageView.image = UIImage(data: data)
                 }
             }
-//        model?.setJpgLarge(cover: model?.book.cover ?? 0) { [weak self] data in
-//            self?.mainView?.detailImageView.image = UIImage(data: data)
-//            if data.isEmpty {
-//                self?.mainView?.detailImageView.image = UIImage(named: "noImage")
-//            }
-//        }
+        }
 }
     @objc private func tapGestureDone() {
         eventHandler?(.backToOpenLibraryEvent)

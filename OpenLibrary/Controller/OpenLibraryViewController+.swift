@@ -20,15 +20,11 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
         itemOne?.bookTitle.text = item?.title
         itemOne?.bookImage.image = UIImage(named: "noImage")
 
-//        model.setJpg(cover: item?.cover ?? 0) { [weak self] data in
-//            guard item?.cover != nil else {
-//                return
-//            }
-//            itemOne?.bookImage.image = UIImage(data: data)
-//        }
-        if  let itemcover = item?.cover  {
-            NetworkManager.shared.fetchImage(imageCoverData: String(itemcover), size: .small) { [weak self] data in
-                itemOne?.bookImage.image = data
+        if  let itemcover = item?.cover {
+            model.setJpg(cover: itemcover) { [weak self] data in
+                DispatchQueue.main.async {
+                    itemOne?.bookImage.image = UIImage(data: data)
+                }
             }
         }
         return itemOne ?? UICollectionViewCell()
@@ -39,6 +35,5 @@ extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionVie
             return
         }
         eventHandler?(.detailBookViewEvent(item))
-       
     }
 }

@@ -38,6 +38,7 @@
 		EC5F238728E9A3EE00399189 /* SampleOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238628E9A3EE00399189 /* SampleOneView.swift */; };
 		EC5F238928E9A4CE00399189 /* SampleOneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5F238828E9A4CE00399189 /* SampleOneData.swift */; };
 		ECCA862828F47662002AFB76 /* Covers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA862728F47662002AFB76 /* Covers.swift */; };
+		ECCA862A28F837BB002AFB76 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCA862928F837BB002AFB76 /* ImageData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		EC5F238628E9A3EE00399189 /* SampleOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneView.swift; sourceTree = "<group>"; };
 		EC5F238828E9A4CE00399189 /* SampleOneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleOneData.swift; sourceTree = "<group>"; };
 		ECCA862728F47662002AFB76 /* Covers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Covers.swift; path = Menegers/Covers.swift; sourceTree = "<group>"; };
+		ECCA862928F837BB002AFB76 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		FE782F59A07D3F0C89469BF8 /* Pods-BookSelector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookSelector.debug.xcconfig"; path = "Target Support Files/Pods-BookSelector/Pods-BookSelector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 			children = (
 				EC4B4C3228D2287D00285221 /* NetworkMenegers.swift */,
 				EC4B4C3428D22C2E00285221 /* OpenLibraryResponseData.swift */,
+				ECCA862928F837BB002AFB76 /* ImageData.swift */,
 			);
 			path = Menegers;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				EC4B4C0F28D21D8300285221 /* ViewController.swift in Sources */,
 				EC5F238928E9A4CE00399189 /* SampleOneData.swift in Sources */,
 				EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */,
+				ECCA862A28F837BB002AFB76 /* ImageData.swift in Sources */,
 				EC4B4C2E28D21F0200285221 /* StoryboardLoadable.swift in Sources */,
 				ECCA862828F47662002AFB76 /* Covers.swift in Sources */,
 				EC4B4C2528D21E4B00285221 /* OpenLibraryView.swift in Sources */,

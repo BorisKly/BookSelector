@@ -14,11 +14,6 @@ class DetailOpenLibraryModel {
     public var book: OpenLibraryData
 
     // MARK: -
-    // MARK: Private Properties
-
-    private var imageCash: [Int : Data] = [:]
-
-    // MARK: -
     // MARK: Init and Deinit
     init(book: OpenLibraryData) {
         self.book = book
@@ -27,17 +22,11 @@ class DetailOpenLibraryModel {
     // MARK: -
     // MARK: Public Methods
 
-    public func setJpgLarge(cover: Int, onSuccess: @ escaping (Data) -> Void) {
-        if let data = imageCash[cover] {
-            onSuccess(data)
-            return
-        }
-
-        NetworkManager.shared.getTitleImage(imageCoverData: String(cover), size: .large, onSuccess: { [weak self] data in
-            self?.imageCash[cover] = data
+    public func setJpgLarge(itemcover: Int, onSuccess: @ escaping (Data) -> Void) {
+        NetworkManager.shared.fetchImage(imageCoverID: itemcover, size: Covers.large ) { [weak self] data in
             DispatchQueue.main.async {
-                onSuccess(data)
+                onSuccess(data ?? Data())
             }
-        })
+        }
     }
 }

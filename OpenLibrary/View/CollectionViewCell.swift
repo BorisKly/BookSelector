@@ -20,9 +20,9 @@ class CollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        let padding: CGFloat = 1
-        self.setConstraintsForOneItemCollection(pad: padding)
+        let padding: CGFloat = 2
         self.setOptionsForOneItemCollection()
+        self.setConstraintsForOneItemCollection(pad: padding)
     }
 
     private func setOptionsForOneItemCollection() {
@@ -37,16 +37,13 @@ class CollectionViewCell: UICollectionViewCell {
         bookImage.pin
             .top(pin.safeArea)
             .left(pin.safeArea)
-            //.height(150)
-            //.width(100)
-            .aspectRatio()
+            .margin(pad)
 
         bookTitle.pin
             .below(of: bookImage, aligned: .left)
             .width(of: bookImage)
-            //.height(50)
             .pinEdges()
-            .marginTop(1)
+            .marginTop(pad)
             .sizeToFit(.width)
 
     }

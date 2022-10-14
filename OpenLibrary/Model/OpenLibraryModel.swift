@@ -8,26 +8,22 @@
 import Foundation
 
 class OpenLibraryModel {
-
-    public var jsonB : [OpenLibraryData]?
-
-    private var imageCash: [Int : Data] = [:]
+public var jsonB : [OpenLibraryData]?
 
     public func setSearchModelForBooks(bookTitle : String, onSuccess: @ escaping () -> Void) {
-        NetworkManager.shared.resultOfTitleSearch(dataR: bookTitle, onSuccess:  { [weak self] json in self?.jsonB = json
-            DispatchQueue.main.async{ onSuccess() }
-        }, onError: { print($0)} )
-}
-    public func setJpg(cover: Int, onSuccess: @ escaping (Data) -> Void) {
-        if let image = imageCash[cover] {
-            onSuccess(image)
-            return
-        }
-        NetworkManager.shared.getTitleImage(imageCoverData: String(cover), size: Covers.small,  onSuccess: { [weak self] data in
-            self?.imageCash[cover] = data
+        NetworkManager.shared.resultOfTitleSearch(dataR: bookTitle, onSuccess:  { [weak self] json in
+            self?.jsonB = json
             DispatchQueue.main.async {
-                onSuccess(data)
+                onSuccess()
             }
-        } )
+        }, onError: { print($0)} )
+    }
+
+    public func setJpg(cover: Int, onSuccess: @ escaping (Data) -> Void) {
+        NetworkManager.shared.fetchImage(imageCoverID: cover, size: Covers.small ) { [weak self] data in
+            DispatchQueue.main.async {
+                onSuccess(data ?? Data())
+            }
+        }
     }
 }

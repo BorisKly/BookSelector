@@ -15,7 +15,6 @@ class DetailOpenLibraryView: UIView {
 
     public var detailImageView: UIImageView = {
         let image = UIImageView()
-       // image.translatesAutoresizingMaskIntoConstraints = false
         image.backgroundColor = Colors.backgroundPicSum2
         image.sizeToFit()
         return image
@@ -23,7 +22,6 @@ class DetailOpenLibraryView: UIView {
 
     public let detailViewTitle: UILabel = {
         let lbl = UILabel()
-       // lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textAlignment = .center
         lbl.backgroundColor = Colors.backgroundPicSum2
         lbl.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
@@ -67,7 +65,7 @@ class DetailOpenLibraryView: UIView {
         detailImageView.pin.top(pin.safeArea)
             .left(pin.safeArea)
             .right(pin.safeArea)
-            .height(600)
+            .height(400)
             .margin(pad)
 
         detailViewTitle.pin
