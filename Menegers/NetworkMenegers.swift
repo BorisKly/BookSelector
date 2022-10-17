@@ -45,18 +45,6 @@ class NetworkManager {
         task.resume()
      }
 
-    public func getTitleImage(imageCoverData: String, size: Covers, onSuccess: @escaping (Data) -> Void ) {
-        let API = urlCover + imageCoverData + size.rawValue
-        guard  let apiURL = URL(string: API) else {
-            fatalError("some error")
-        }
-        let task = URLSession.shared.dataTask(with: apiURL) { [weak self] (data, _, error) in
-            guard let data = data, error == nil else {return}
-            onSuccess(data)
-        }
-        task.resume()
-    }
-
     public func fetchImage(imageCoverID: Int, size: Covers, onSuccess: @escaping (Data?) -> Void ) {
         let key = NSString(string: "\(imageCoverID) \(size.rawValue)")
         if let image = cache.object(forKey: key) {
