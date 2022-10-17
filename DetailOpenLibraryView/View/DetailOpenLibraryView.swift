@@ -52,12 +52,6 @@ class DetailOpenLibraryView: UIView {
     }
 
     // MARK: -
-    // MARK: Public Methods
-
-    public func setupUI() {
-    }
-
-    // MARK: -
     // MARK: Private Methods
 
     private func setConstraints(pad: CGFloat) {

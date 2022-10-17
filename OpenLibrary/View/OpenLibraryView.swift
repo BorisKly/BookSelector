@@ -9,6 +9,9 @@ import PinLayout
 
 class OpenLibraryView: UIView {
 
+    // MARK: -
+    // MARK: Public Properties
+
     weak public var delegate: OpenLibraryViewControllerDelegate?
 
     public var myBookItemView: UICollectionView = {
@@ -23,12 +26,6 @@ class OpenLibraryView: UIView {
         return bookCollectionView
     }()
 
-    private let bookFinderLbl: UILabel = {
-        let lblField = UILabel()
-        lblField.isUserInteractionEnabled = true
-        return lblField
-    }()
-
     public let bookFinderSearchBar: UISearchBar = {
         let txtField = UISearchBar()
         txtField.isUserInteractionEnabled = true
@@ -36,6 +33,15 @@ class OpenLibraryView: UIView {
         txtField.sizeToFit()
         txtField.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
         return txtField
+    }()
+
+    // MARK: -
+    // MARK: Private Properties
+
+    private let bookFinderLbl: UILabel = {
+        let lblField = UILabel()
+        lblField.isUserInteractionEnabled = true
+        return lblField
     }()
 
     private let confirmBtn: UIButton = {
@@ -67,7 +73,6 @@ class OpenLibraryView: UIView {
         super.layoutSubviews()
         let padding: CGFloat = 20
         setConstraints(pad: padding)
-        print("Run layoutSubviews")
     }
     // MARK: - Public Methods
 

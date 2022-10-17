@@ -42,9 +42,7 @@ final class ScreensCoordinator: Coordinator {
     }
 
     private func detailBookView(book: OpenLibraryData) {
-//        let controller =
-//            DetailOpenLibraryViewController.startVC()
-//        controller.model = DetailOpenLibraryModel(book: book)
+
         let controller = DetailOpenLibraryViewController.startVCNew(book: book) //
         controller.eventHandler = { event in
             switch event {
@@ -65,9 +63,8 @@ final class ScreensCoordinator: Coordinator {
                 self?.jumpToScreen(.openLibraryScreen)
             case .backTo:
                 self?.jumpToScreen(.openLibraryScreen)
-
             }
-            }
+        }
         self.navigationController.pushViewController(controller, animated: true)
     }
 }
@@ -79,9 +76,9 @@ extension ScreensCoordinator {
         case .openLibraryScreen:
             self.openLibrary()
         case .detailBookViewScreen(let book):
-            self .detailBookView(book: book)
+            self.detailBookView(book: book)
         case .sampleOne:
-            self .sampleOne()
+            self.sampleOne()
         }
     }
 }

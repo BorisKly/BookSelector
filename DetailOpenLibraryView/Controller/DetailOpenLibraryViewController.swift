@@ -29,10 +29,6 @@ class DetailOpenLibraryViewController: UIViewController {
     // MARK: -
     // MARK: Init and Deinit
 
-    public static func startVC() -> Self {
-        return Self.init()
-    }
-
     public static func startVCNew(book: OpenLibraryData) -> Self {
         let controller = Self.init()
         controller.model = DetailOpenLibraryModel(book: book)
@@ -53,15 +49,7 @@ class DetailOpenLibraryViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureDone))
         mainView?.addGestureRecognizer(tapGesture)
         mainView?.backgroundColor = Colors.backgroundPicSum3
-        mainView?.setupUI()
         setImageLarge()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super .viewDidAppear(animated)
-    }
-
-    override func viewDidLayoutSubviews() {
     }
 
     // MARK: -
@@ -77,7 +65,7 @@ class DetailOpenLibraryViewController: UIViewController {
                 }
             }
         }
-}
+    }
     @objc private func tapGestureDone() {
         eventHandler?(.backToOpenLibraryEvent)
     }

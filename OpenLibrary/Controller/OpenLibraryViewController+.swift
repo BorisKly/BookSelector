@@ -7,9 +7,10 @@
 
 import UIKit
 
-private var  indentifire: String { "BookModelCell" }
-
 extension OpenLibraryViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+
+    private var  indentifire: String { "BookModelCell" }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return   model.jsonB?.count ?? 0
     }

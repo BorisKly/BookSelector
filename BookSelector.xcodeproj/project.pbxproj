@@ -10,7 +10,6 @@
 		16E23107940AC4A417AE7E62 /* Pods_BookSelector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AA6DA208AFAFC12D7E8AE0 /* Pods_BookSelector.framework */; };
 		EC4B4C0B28D21D8300285221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C0A28D21D8300285221 /* AppDelegate.swift */; };
 		EC4B4C0D28D21D8300285221 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C0C28D21D8300285221 /* SceneDelegate.swift */; };
-		EC4B4C0F28D21D8300285221 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C0E28D21D8300285221 /* ViewController.swift */; };
 		EC4B4C1228D21D8300285221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C1028D21D8300285221 /* Main.storyboard */; };
 		EC4B4C1428D21D8A00285221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C1328D21D8A00285221 /* Assets.xcassets */; };
 		EC4B4C1728D21D8A00285221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C1528D21D8A00285221 /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		EC4B4C3B28D2324200285221 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC4B4C3928D2324200285221 /* CollectionViewCell.xib */; };
 		EC4B4C3D28D23DB700285221 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C3C28D23DB700285221 /* Colors.swift */; };
 		EC4B4C4228D6496B00285221 /* OpenLibraryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4128D6496A00285221 /* OpenLibraryData.swift */; };
-		EC4B4C4828D9F25100285221 /* BooksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4728D9F25100285221 /* BooksModel.swift */; };
 		EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4928E034D900285221 /* SomeConstraints.swift */; };
 		EC4B4C4C28E0371700285221 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C4B28E0371700285221 /* Fonts.swift */; };
 		EC4B4C5428E3794500285221 /* DetailOpenLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4B4C5328E3794400285221 /* DetailOpenLibraryViewController.swift */; };
@@ -47,7 +45,6 @@
 		EC4B4C0728D21D8300285221 /* BookSelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4B4C0A28D21D8300285221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC4B4C0C28D21D8300285221 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC4B4C0E28D21D8300285221 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC4B4C1128D21D8300285221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC4B4C1328D21D8A00285221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC4B4C1628D21D8A00285221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,7 +63,6 @@
 		EC4B4C3928D2324200285221 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		EC4B4C3C28D23DB700285221 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		EC4B4C4128D6496A00285221 /* OpenLibraryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLibraryData.swift; sourceTree = "<group>"; };
-		EC4B4C4728D9F25100285221 /* BooksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksModel.swift; sourceTree = "<group>"; };
 		EC4B4C4928E034D900285221 /* SomeConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeConstraints.swift; sourceTree = "<group>"; };
 		EC4B4C4B28E0371700285221 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EC4B4C5328E3794400285221 /* DetailOpenLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOpenLibraryViewController.swift; sourceTree = "<group>"; };
@@ -112,16 +108,16 @@
 		EC4B4BFE28D21D8300285221 = {
 			isa = PBXGroup;
 			children = (
+				EC4B4C3128D2286200285221 /* Menegers */,
+				EC4B4C0928D21D8300285221 /* BookSelector */,
 				EC5F238028E9A35D00399189 /* SampleOne */,
+				EC4B4C1E28D21DCA00285221 /* OpenLibrary */,
 				EC4B4C4F28E378E900285221 /* DetailOpenLibraryView */,
 				EC4B4C4B28E0371700285221 /* Fonts.swift */,
 				EC4B4C4928E034D900285221 /* SomeConstraints.swift */,
 				EC4B4C3C28D23DB700285221 /* Colors.swift */,
 				ECCA862728F47662002AFB76 /* Covers.swift */,
-				EC4B4C3128D2286200285221 /* Menegers */,
-				EC4B4C1E28D21DCA00285221 /* OpenLibrary */,
 				EC4B4C2828D21E9C00285221 /* Coordinator */,
-				EC4B4C0928D21D8300285221 /* BookSelector */,
 				EC4B4C0828D21D8300285221 /* Products */,
 				0778B3255B936EA865F0554B /* Pods */,
 				64C3972047E243F4BD831FED /* Frameworks */,
@@ -141,7 +137,6 @@
 			children = (
 				EC4B4C0A28D21D8300285221 /* AppDelegate.swift */,
 				EC4B4C0C28D21D8300285221 /* SceneDelegate.swift */,
-				EC4B4C0E28D21D8300285221 /* ViewController.swift */,
 				EC4B4C1028D21D8300285221 /* Main.storyboard */,
 				EC4B4C1328D21D8A00285221 /* Assets.xcassets */,
 				EC4B4C1528D21D8A00285221 /* LaunchScreen.storyboard */,
@@ -174,7 +169,6 @@
 			children = (
 				EC4B4C2628D21E6600285221 /* OpenLibraryModel.swift */,
 				EC4B4C4128D6496A00285221 /* OpenLibraryData.swift */,
-				EC4B4C4728D9F25100285221 /* BooksModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -416,13 +410,11 @@
 				EC4B4C4228D6496B00285221 /* OpenLibraryData.swift in Sources */,
 				EC4B4C3D28D23DB700285221 /* Colors.swift in Sources */,
 				EC4B4C3728D22DE200285221 /* OpenLibraryViewController+.swift in Sources */,
-				EC4B4C4828D9F25100285221 /* BooksModel.swift in Sources */,
 				EC4B4C3028D21F2600285221 /* ScreensCoordinator.swift in Sources */,
 				EC4B4C2C28D21ED800285221 /* Coordinator.swift in Sources */,
 				EC4B4C5628E3796100285221 /* DetailOpenLibraryView.swift in Sources */,
 				EC4B4C2A28D21EB300285221 /* AppConfigurator.swift in Sources */,
 				EC4B4C2328D21E2800285221 /* OpenLibraryViewController.swift in Sources */,
-				EC4B4C0F28D21D8300285221 /* ViewController.swift in Sources */,
 				EC5F238928E9A4CE00399189 /* SampleOneData.swift in Sources */,
 				EC4B4C4A28E034D900285221 /* SomeConstraints.swift in Sources */,
 				ECCA862A28F837BB002AFB76 /* ImageData.swift in Sources */,
