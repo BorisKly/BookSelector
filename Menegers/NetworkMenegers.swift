@@ -43,6 +43,7 @@ class NetworkManager {
         task.resume()
      }
 
+<<<<<<< Updated upstream
     public func getTitleImage(imageCoverData: String, size: Covers, onSuccess: @escaping (Data) -> () ){
         let API = urlCover + imageCoverData + size.rawValue
         guard  let apiURL = URL(string: API) else {
@@ -52,6 +53,27 @@ class NetworkManager {
         let task = session.dataTask(with: apiURL) {(data, response, error) in
             guard let data = data, error == nil else {return}
             onSuccess(data)
+=======
+    public func fetchImage(imageCoverID: Int, size: Covers, onSuccess: @escaping (Data?) -> Void ) {
+        let key = NSString(string: "\(imageCoverID) \(size.rawValue)")
+        if let image = cache.object(forKey: key) {
+            onSuccess(image.image)
+            return
+        }
+
+        let API = urlCover + String(imageCoverID) + size.rawValue
+        guard  let apiURL = URL(string: API) else {
+            onSuccess(nil)
+            return
+        }
+        let task = URLSession.shared.dataTask(with: apiURL) { [weak self] (data, _, error) in
+            guard let dataN =  data, error == nil else {
+                onSuccess(nil)
+                return
+            }
+            self?.cache.setObject(ImageData(dataN), forKey: key)
+            onSuccess(dataN)
+>>>>>>> Stashed changes
         }
         task.resume()
     }
