@@ -48,7 +48,7 @@ class OpenLibraryView: UIView {
         let btn = UIButton()
         btn.backgroundColor = Colors.background2
         btn.setTitleColor(Colors.background4, for: .normal)
-        btn.setTitle("Press to show result", for: .normal)
+        btn.setTitle("Press to show result".localize(), for: .normal)
         btn.setTitle("Pressed...", for: .highlighted)
         btn.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
         btn.addTarget(self, action: #selector(findBooks), for: .touchDown)

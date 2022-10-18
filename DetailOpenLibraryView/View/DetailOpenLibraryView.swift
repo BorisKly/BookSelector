@@ -59,7 +59,7 @@ class DetailOpenLibraryView: UIView {
         detailImageView.pin.top(pin.safeArea)
             .left(pin.safeArea)
             .right(pin.safeArea)
-            .height(400)
+            .bottom(200)
             .margin(pad)
 
         detailViewTitle.pin
