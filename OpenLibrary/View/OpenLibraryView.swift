@@ -49,7 +49,7 @@ class OpenLibraryView: UIView {
         btn.backgroundColor = Colors.background2
         btn.setTitleColor(Colors.background4, for: .normal)
         btn.setTitle("Press to show result".localize(), for: .normal)
-        btn.setTitle("Pressed...", for: .highlighted)
+        btn.setTitle("Pressed...".localize(), for: .highlighted)
         btn.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
         btn.addTarget(self, action: #selector(findBooks), for: .touchDown)
         btn.clipsToBounds = true
@@ -100,9 +100,7 @@ class OpenLibraryView: UIView {
         label.font = Fonts.font2
         label.sizeToFit()
         label.layer.cornerRadius = CGFloat(CornerRadius.forButtons)
-        label.text = """
-                     Search of Book Title
-                     """
+        label.text = "Search of Book Title".localize()
     }
 
     public func setConstraints(pad: CGFloat) {
